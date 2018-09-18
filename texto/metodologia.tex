@@ -1,10 +1,6 @@
-\chapter{Metodologia}
+\chapter{Avaliação da testabilidade de SMA $\mathcal{M}$oise$^{+}$ }
 
-Em \cite{winikoff2014testability} um grafo de controle de fluxo foi utilizado para avaliar a testabilidade de um sistema BDI. A proposta deste trabalho é avaliar a testabilidade de um SMA utilizando o $\mathcal{M}$oise$^{+}$ como modelo de organização e empregando RP como ferramenta de descrição e análise.  
-
-foi transformado em uma RP Figura \ref{fig:cf_rp} seguindo a seguinte metodologia.
-
-
+Em \cite{winikoff2014testability} um grafo de controle de fluxo foi utilizado para avaliar a testabilidade de um sistema BDI. A proposta deste trabalho é avaliar a testabilidade de um SMA utilizando o $\mathcal{M}$oise$^{+}$ como modelo de organização e empregando RP como ferramenta de descrição e análise.
 
 Partindo como base o trabalho de \cite{winikoff2017bdi} o grafo de controle de fluxo apresentado na Figura \ref{fig:control_fluxo} será utilizado para apresentar a metodologia de transformação de controle de fluxo para RP. Na conversão de controle de fluxo para RP é considerado que cada nó será transformado em um lugar, e as ligações entre os nós, as arestas, são convertidas em transições que são conectados aos lugares por arcos. Logo o nó \textbf{S} que é o início do controle de fluxo é transformado no lugar \textbf{S}. Os lugares \textbf{S} e \textbf{A1} são conectados por dois arcos e pela transição \textbf{t0}, que é a transição disparada ao começar o programa.
 
@@ -32,7 +28,7 @@ Em \textbf{A1} há uma estrutura de divisão entre diferentes sequências, onde 
 
 No método de \cite{winikoff2014testability,winikoff2017bdi} a avaliação de testabilidade é baseada na árvore de planos-metas, onde os objetivo tem como filhos os plano que são aplicáveis a ele, e cada instância do plano tem como filhos os sub-objetivos que ele publica, mas ainda apenas no nível de metas e ações. No contexto deste trabalho é necessário avaliar em múltiplos níveis que não estavam previsto em outros trabalhos, como missões, papéis e metas.
 
-Em \cite{winikoff2014testability} a árvore de planos-metas é o pilar para seu trabalho, neste a avaliação da testabilidade no $\mathcal{M}$oise$^{+}$ será baseada no esquema social da especificação social, que é uma árvore de decomposição de metas. Para realizar a conversão do esquema social para RP é necessário convencionar a relação dos o operadores apresentados na legenda da Figura \ref{fig:es_exemplo} e sua RP equivalente.
+Em \cite{winikoff2014testability} a árvore de planos-metas é o pilar para seu trabalho, neste a avaliação da testabilidade no $\mathcal{M}$oise$^{+}$ será baseada no esquema social da especificação social, que é uma árvore de decomposição de metas. Para realizar a conversão do esquema social para RP é necessário convencionar a relação dos operadores apresentados na legenda da Figura \ref{fig:es_exemplo} e sua RP equivalente.
 
 \begin{itemize}
 
@@ -51,10 +47,57 @@ Em \cite{winikoff2014testability} a árvore de planos-metas é o pilar para seu 
 \label{fig:moise_rp}
 \end{figure}
 
-Com a relação para a transformação dos operadores do esquema social para RP é possível criar a estrutura básica da rede, onde agora cada meta será um \textit{lugar}, semelhante ao que foi realizado na Figura \ref{fig:4estrutura_basica} onde cada ação foi transformado em um \textit{lugar}.  
+Com a relação para a transformação dos operadores do esquema social para RP é possível criar a estrutura básica da rede, onde agora cada meta será um \textit{lugar}, semelhante ao que foi realizado na Figura \ref{fig:4estrutura_basica} onde cada ação foi transformada em um \textit{lugar}.  
 
-Para atender ao nível organizacional é necessário utilizar recursos que não são disponíveis nas RP ordinárias, os recursos necessários são encontrados nas RP coloridas. As fichas coloridas são etiquetas que representam os papéis da organização, os lugares se associam ao conjunto de cores das fichas, ou seja, sendo os lugares metas, então cada lugar terá a cor associada ao conjunto de papéis relacionados e de acordo com a especificação deôntica é possível correlacionar com a missão que representa aquele lugar.
+Para atender ao nível organizacional é necessário utilizar recursos que não são disponíveis nas RP ordinárias, mas que podem ser modelados através de RP Coloridas. Na metodologia, as fichas coloridas são etiquetas empregadas na representação  dos papéis da organização. Os lugares se associam ao conjunto de cores das fichas, ou seja, sendo os lugares metas, então cada lugar terá a cor associada ao conjunto de papéis relacionados e de acordo com a especificação deôntica é possível correlacionar com a missão que representa aquele lugar.
 
-LIVRO RP pág 90 Associação de funçoes aos arcos, falar sobre os papéis e o valor das transições.
+Os arcos que ligam os lugares as transições recebem agora uma variável de cor (\textit{colset}) com valor pertencente ao papel, descrevendo qual qual cor está saindo do lugar e qual cor estará indo para o lugar de saída. Para o exemplo da Figura \ref{fig:es_exemplo} dever-se ter um \textit{colset} que receberá os papéis, um \textit{colset} papéis, que será uma lista de papéis, e as variáveis que retratam as cores das transições, o código para declarar as cores na ferramenta CPN Tools encontra-se abaixo.
+
+\begin{lstlisting}
+colset Role = with candidato | secretario | membro | presidente;
+colset ROLES = list Role;
+var c, s, m, p: ROLES;
+\end{lstlisting}
+
+A linha 1 declara o \textit{colset} Role, que deverá conter todos os papéis presentes no modelo $\mathcal{M}$oise$^{+}$ utilizado.  A linha 2 é declarada ROLES que é uma lista de papéis (\textit{Role}), ela será a cor padrão dos lugares que em alguns casos recebem mais de uma ficha, ou então mais de um papel. E \textit{var} são as variáveis que representarão os papéis \textit{ROLES} nos arcos, limitando a maneira de como disparar as transições e quais cores devem ser colocadas nos lugares de saída.
+
+Após inserir as declarações padrões para as novas cores é possível criar a RPC na ferramenta CPN Tools. Para o ES da Figura \ref{fig:es_exemplo} começando do canto esquerdo inferior da árvore. A modelagem da RPC pode ser dividida em 3 etapas.
+
+\begin{enumerate}
+\item Definição da estrutura da RPC: como primeiro conjunto de metas tem-se $g5$, $g6$ e $g4$ ligadas pelo operador paralelismo, logo utilizamos a Figura \ref{fig:moise_rp} para escolher a estrutura da RP para este conjunto de metas.
+\item Definição das cores dos lugares: como todas as metas possuem a mesma missão, todos os lugares receberão a mesma cor, missão $m1$ é papel do candidato, logo os lugares receberão a ficha candidato.
+\item Definição das cores das transições: foi definida a variável c como etiqueta representante dos candidatos.
+\end{enumerate}
+
+O resultado pode ser visto na Figura \ref{fig:RPC-1}. Na Figura \ref{fig:4-rp-exemolo1} é apresentada a RPC com as fichas de candidato nos lugares iniciais. É possível observar que a transição está ativada pela marcação verde que há nela, sendo assim todos os requisitos para disparar estão contemplados. Na Figura \ref{fig:4-rp-exemolo2} a transição foi disparada, ela está desativada e o lugar $g4$, lugar final, recebeu uma ficha, que é o valor de saída da transição mostrado pela variável $c$ do arco. Este exemplo, apesar de ter duas fichas candidato ele simboliza que o mesmo agente candidato se comprometeu com as metas $g5$ e $g6$.
+
+\begin{figure}[ht]
+  \centering
+  \subfigure[RPC]{\includegraphics[width=0.47\textwidth]{imagens/4-rp-exemplo1.png}
+  \label{fig:4-rp-exemolo1}}
+  \subfigure[RPC com transição disparada]{\includegraphics[width=0.45\textwidth]{imagens/4-rp-exemplo2.png}\label{fig:4-rp-exemolo2}}
+  \caption{RPC das primeiras metas do ES}
+  \label{fig:RPC-1}
+\end{figure}
+
+Na Figura \ref{fig:RPC-2} a RPC representa as metas $g11$, $g12$ e $g10$ da ES. Este conjunto de metas tem diferentes missões. A meta $g11$ em Verde-azulado (cerceta) é da missão $m3$ e recebeu a ficha "secretario", a meta $g12$ em oliva recebeu a ficha "membro" e faz parte da missão $m4$ e por último a meta $g10$, em vermelho escuro, faz parte da missão $m5$, representa a conclusão das metas $g11$ e $g12$, e é de responsabilidade do presidente. A opção de manter as fichas "secretario" e "membro" na missão $g10$ foi para simbolizar que um agente pode delegar as metas para outros papéis realizarem, e o dono da meta ter apenas que garantir que ela seja concluída.
+
+\begin{figure}[ht]
+  \centering
+  \subfigure[RPC]{\includegraphics[width=0.47\textwidth]{imagens/4-rp-exemplo3.png}
+  \label{fig:4-rp-exemolo3}}
+  \subfigure[RPC com transição disparada]{\includegraphics[width=0.45\textwidth]{imagens/4-rp-exemplo4.png}\label{fig:4-rp-exemolo4}}
+  \caption{RPC metas $g11$, $g12$ e $g10$}
+  \label{fig:RPC-2}
+\end{figure}
 
 %Iniciando pela árvore de metas globais da Figura \ref{fig:es_exemplo}, e utilizando os operadores da Figura \ref{fig:moise_rp} a árvore é transformada em RP para cada missão, ainda de maneira isolada Figura \ref{fig:missoes_rp}. O processo começa lendo a árvore da esquerda para a direita da parte inferior, e transformando as metas em lugares da RP, utilizando os operadores relacionados, até que um conjuntos de meta para finalizar a missão seja concluída.
+
+\begin{figure}[ht]
+  \centering
+  \subfigure[RPC com sucesso na execução ]{\includegraphics[width=0.49\textwidth]{imagens/4-rp-falha1.png}
+  \label{fig:4-rp-falha2}}
+  \subfigure[RPC com falha na execução]{\includegraphics[width=0.49\textwidth]{imagens/4-rp-falha2.png}\label{fig:4-rp-falha2}}
+  \caption{RPC com uma transição de falha}
+  \label{fig:RPC-3}
+\end{figure}

@@ -8,7 +8,7 @@
 % Deixa essa como a primeira seção do capítulo.
 % 
 % ^ <brunocoelho.r@gmail.com> 2017-10-21T14:21:06.943Z.
-  A Inteligência Artificial (IA) focou na criação de sistemas autônomos com a capacidade de resolver problemas com a ajuda mínima de outros sistemas. Esses sistemas muitas vezes acabaram falhando quando a resolução do problema escapava da sua especialização. A solução deste problema foi colocar o sistema em uma sociedade de sistemas com uma coleção diversificada de habilidades e capacidades, da mesma forma que as pessoas superam as limitações dos indivíduos quando trabalham juntas em uma organização \cite{durfee1991distributed}. 
+  A Inteligência Artificial (IA), na sua origem, focou na criação de sistemas autônomos com a capacidade de resolver problemas com a ajuda mínima de outros sistemas. Esses sistemas muitas vezes não eram suficientes quando a resolução do problema escapava da sua especialização. A solução foi colocar o sistema em uma sociedade de sistemas com uma coleção diversificada de habilidades e capacidades, da mesma forma que as pessoas superam as limitações dos indivíduos quando trabalham juntas em uma organização \cite{durfee1991distributed}. 
 
 Assim surgiu a Inteligência Artificial Distribuída uma subárea da IA que concentra esforços na pesquisa da compreensão das técnicas de conhecimento e raciocínio necessárias para a coordenação inteligente e sobre a incorporação e avaliação deste entendimento em sistemas de informação. Outros fatores também contribuíram e permitiram o desenvolvimento desta subárea, como o surgimento da computação distribuída e dos \textit{clusters} de computadores \cite{durfee1991distributed,bond2014readings}.
 
@@ -118,16 +118,16 @@ Um ambiente estático permanece inalterado, exceto por algo que ocorra por algum
 Ambiente discreto tem um número finito de estados distintos, como um jogo de xadrez, que possui um número finitos de casas e jogadas possíveis. Já um ambiente contínuo as ações ocorrem ao longo do tempo, como por exemplo uma corrida de táxi em que as ações e a localização se alteram de acordo com o tempo.
 
 \item \textbf{Agente único \textit{vs.} Multiagente}
-Um ambiente onde um agente resolve um problema sozinho está em um ambiente de agente único, como exemplo podemos ter o agente que retira as peças danificadas na linha de produção. Um agente tem por objetivo concluir sua meta de melhor maneira possível, em ambiente multiagente podemos ter agentes atuando com comportamentos cooperativo ou competitivo de acordo com a situação desejada.
+Um ambiente onde um agente resolve um problema sozinho está em um ambiente de agente único, como é o caso de um  agente que retira as peças danificadas na linha de produção. Um agente tem por objetivo concluir sua meta de melhor maneira possível, em ambiente multiagente podemos ter agentes atuando com comportamentos cooperativo ou competitivo de acordo com a situação desejada.
 \end{itemize}
 
 \subsection{Organização}\label{sec:orgsma}
 
-  Na nossa sociedade temos diversas organizações, e elas se mostraram um mecanismo eficaz para coordenar comportamentos de diferentes agentes em uma comunidade. No domínio dos sistema multiagente a organização é uma coleção de papéis, relacionamentos e estruturas de autoridade que regem seu comportamento. Geralmente os SMA têm alguma forma de organização, embora possa ser implícita e informal. As organizações de agentes orientam o modo como os membros da população interagem uns com os outros, não apenas a curto prazo, mas também a longo prazo. Essa orientação pode influenciar as relações de autoridade, fluxo de dados, alocação de recursos, padrões de coordenação ou qualquer outra série de características do sistema \cite{horling2004survey}.
+  Na nossa sociedade temos diversas organizações, e elas se mostram um mecanismo eficaz para coordenar comportamentos de diferentes agentes em uma comunidade. No domínio dos sistema multiagente a organização é uma coleção de papéis, relacionamentos e estruturas de autoridade que regem seu comportamento. Geralmente os SMA têm alguma forma de organização, embora possa ser implícita e informal. As organizações de agentes orientam o modo como os membros da população interagem uns com os outros, não apenas a curto prazo, mas também a longo prazo. Essa orientação pode influenciar as relações de autoridade, fluxo de dados, alocação de recursos, padrões de coordenação ou qualquer outra série de características do sistema \cite{horling2004survey}.
 
 Existem vários modelos de organização e eles estruturam o comportamento de entidades complexas em uma hierarquia de entidades encapsuladas onde cada membro tem funções a desempenhar. As funções ou papéis estruturam os departamentos, e estes estruturam uma organização. A teoria da organização analisa como estas organizações funcionam, suas principais características, as características mais relevantes dos membros, os papéis gerais que os membros adotam, os relacionamentos entre os membros, a hierarquia, as regras e normas que regem a organização \cite{argente2006multi}. A organização pode ajudar grupos de agentes simples a exibir comportamentos complexos e ajudar agentes sofisticados a reduzir a complexidade de seus raciocínios. %Implícito neste conceito é o pressuposto de que a organização tem algum propósito de que  a forma, o tamanho e as características da estrutura organizacional podem afetar o comportamento do sistema \cite{horling2004survey}.
 
-No início, os sistemas tinham apenas uma visão centrada nos aspectos individuais dos agentes de modo que o SMA é projetado em termos de estados mentais dele, como as crenças, intenções e objetivos, conhecida como metodologia orientada a agentes. Apartir de então os SMA evoluíram para a metodologia orientada para a organização, levando em conta suas principais metas, estrutura e normas sociais\cite{argente2006multi}. 
+No início, os sistemas tinham apenas uma visão centrada nos aspectos individuais dos agentes de modo que o SMA é projetado em termos de estados mentais dele, como as crenças, intenções e objetivos, conhecida como metodologia orientada a agentes. Desde então os SMA evoluíram para a metodologia orientada para a organização, levando em conta suas principais metas, estrutura e normas sociais\cite{argente2006multi}. 
 
 Um conceito do tema de organização é a coordenação e \citet{malone1994interdisciplinary} a define como gestão de dependências entre atividades independentes. Esta definição para coordenação tem um sentido inclusivo para diferentes áreas de conhecimento, podendo ser aplicado em teoria organizacional, economia, ciência política, biologia, entre outros. Para a computação, as dependências entre diferentes processos computacionais se assemelham a interações entre pessoas, e devem ser estudados como podem ser gerenciadas.
 
@@ -210,7 +210,13 @@ A Especificação Organizacional (OS) no $\mathcal{M}$oise$^{+}$ é formada com 
 
 Os diferentes papéis do exemplo possuem diferentes missões, um agente no papel de candidato, tem a missão $m1$. Para cumprir esta missão o candidato deve ter como objetivo as metas ($g1, g4, g5, g6, g7, g8, g9$ e $g14$), a descrição das metas está na Tabela \ref{tab:desc_metas}.
 
-Portanto para cumprir a meta $g0$ primeiro o agente no papel candidato tem que ter toda a documentação necessária $g5$ e ter um orientador $g6$, com estas duas metas concluídas então a meta $g4$ é finalizada dando assim liberação para continuar, no caso para as metas $g8$ ou $g9$ já que o operador é de escolha. \textcolor{red}{CONTINUAR AQUI} 
+Portanto para cumprir a meta $g0$ primeiro o agente no papel candidato tem que ter toda a documentação necessária $g5$ e ter um orientador $g6$, com estas duas metas concluídas então a meta $g4$ é finalizada dando assim liberação para continuar, no caso para as metas $g8$ ou $g9$ já que o operador é de escolha.
+
+Realizando a meta submissão eletrônica ($g8$) ou por correio ($g9$) a meta $g7$ está habilitada para ser concluída. Neste momento a meta $g1$ está liberada para ser satisfeita. A meta $g2$ faz parte da missão $m2$ que corresponde ao papel secretário, então um agente que assumir o papel de secretário da comissão deverá verificar se a documentação está correta.
+
+As metas $g11$ e $g12$ podem ser realizadas em paralelo, e são responsabilidades do papel secretário $m3$ e do papel membro $m4$ respectivamente, assim que a metas estiverem concluídas, o presidente $m5$ assume a responsabilidade que $g10$ seja concluída, e terá que garantir que o projeto do candidato seja avaliado $g13$ e assegurar que seja aprovado pela comissão $g3$, ou reprovado caso ineficiente (um caso de falha na missão do candidato não descrito na especificação). E por fim o candidato tem a meta de garantir que o formulário de matrícula seja recebido pela comissão de seleção $g14$.
+
+As relações das missões com os papéis podem ser observadas no item Especificação Deôntica logo abaixo.
 
 \begin{table}[ht]
 \footnotesize
@@ -231,15 +237,31 @@ g14    & formulário de matrícula preenchido é recebido                       
 \end{tabular}
 \end{table}
 
-\item {\it Especificação Deôntica (ED)}: é a especificação que relaciona a EE com a EF no nível individual, especificando quais as missões um papel tem permissão ou obrigação de realizar.
+\item {\it Especificação Deôntica (ED)}: é a especificação que relaciona a EE com a EF no nível individual, especificando quais as missões um papel tem permissão ou obrigação de realizar. A Tabela \ref{tab:escola-deontica} contém a ED da sociedade comissão de seleção.
+
+\begin{table}[ht]
+\centering
+\caption{Especificação deôntica. \cite{hubner2003modelo}}
+\label{tab:escola-deontica}
+\begin{tabular}{@{}lll@{}}
+\toprule
+papel       & relação deôntica  & missão                        \\ \midrule
+candidato   & permissão         & \textit{m1}                          \\
+secretário  & permissão         & \textit{m2}                          \\
+secretário  & permissão         & \textit{m3}                          \\
+membro      & permissão         & \textit{m4}                          \\
+presidente  & permissão         & \textit{m5}                          \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \end{itemize}
 
 \section{Teste de Software}
 
-O teste faz parte de um método de verificação e validação de software onde a verificação investiga se o software atende aos seus requisitos funcionais e não funcionais enquanto a validação é um processo mais amplo no qual o objetivo é garantir que o software atenda às expectativas do cliente, sendo essencial já que nem sempre as especificações dos requisitos refletem os desejos ou necessidades reais dos clientes e usuários do sistema \cite{sommerville2010}. O termo garantir refere-se ao processo que visa obter confiança de que um sistema se comportará adequadamente \cite{winikoff2010assurance}. 
+O teste faz parte dos métodos de verificação e validação de software onde a verificação investiga se o software atende aos seus requisitos funcionais e não funcionais enquanto a validação é um processo mais amplo no qual o objetivo é garantir que o software atenda às expectativas do cliente, sendo essencial já que nem sempre as especificações dos requisitos refletem os desejos ou necessidades reais dos clientes e usuários do sistema \cite{sommerville2010}. O termo garantir refere-se ao processo que visa obter confiança de que um sistema se comportará adequadamente \cite{winikoff2010assurance}. 
 
-Segundo \citet{sommerville2010} o  processo de verificação e validação possuem outras atividades além dos testes, entre elas as inspeções e revisões de software. Estas atividades analisam e verificam os requisitos do sistema, os modelos de projeto, o código-fonte do programa e os testes propostos para o sistema como descrito na Figura \ref{fig:ver&val}. 
+Segundo \citet{sommerville2010} os  processos de verificação e validação possuem outras atividades além dos testes, entre elas as inspeções e revisões de software. Estas atividades analisam e verificam os requisitos do sistema, os modelos de projeto, o código-fonte do programa e os testes propostos para o sistema como descrito na Figura \ref{fig:ver&val}. 
 
 \begin{figure}[ht]
 \centering
@@ -257,7 +279,7 @@ As inspeções podem ser mais eficazes nas descobertas de defeitos que os testes
 % 
 % ^ <brunocoelho.r@gmail.com> 2017-10-31T14:21:59.646Z.
 
-No entanto, as inspeções não podem substituir os testes de software, elas não são boas para descobrir defeitos que surgem devido a interações inesperadas entre diferentes partes de um programa, problemas de temporização ou problemas com o desempenho do sistema. Além disso, pode ser difícil e dispendioso montar uma equipe de inspeção \cite{sommerville2010}. 
+No entanto, as inspeções não podem substituir os testes de software, já que não são boas para descobrir defeitos que surgem devido a interações inesperadas entre diferentes partes de um programa, problemas de temporização ou problemas com o desempenho do sistema. Além disso, pode ser difícil e dispendioso montar uma equipe de inspeção \cite{sommerville2010}. 
 % * <eder.m.goncalves@gmail.com> 2017-10-19T17:13:44.868Z:
 % 
 % > As inspeções podem ser mais eficazes nas descobertas de defeitos que os testes de software e possui vantagens como ser utilizada em  versões incompletas do software e podem ser inspecionadas sem necessidade de desenvolvimento de um teste específico, além de defeitos uma inspeção pode considerar outros atributos de qualidade para um programa e como a inspeção é um processo estático não se tem a preocupação com as interações entre erros e consequentemente uma única sessão de inspeção pode descobrir muitos erros em um sistema, já nos testes dinâmicos erros podem encerrar o processo de buscas de novas falhas. No entanto, as inspeções não podem substituir os testes de software, elas não são boas para descobrir defeitos que surgem devido a interações inesperadas entre diferentes partes de um programa, problemas de temporização ou problemas com o desempenho do sistema.
@@ -314,15 +336,15 @@ Neste trabalho serão apresentadas duas abordagens que são utilizadas para iden
 
 O termo caixa preta é utilizado fazendo referência ao fato de que o projetista de testes não tem acesso ao código fonte do programa, sendo a parte interna do sistema desconhecida.  Assim o desenvolvimento do projeto de teste é realizado apenas tendo conhecimento da especificação do software. Para estes testes, a única informação utilizada é a especificação do software. Portanto os casos de testes são independentes de como o sistema é implementado, não gerando problemas se ocorrerem mudanças na implementação, e o desenvolvimento dos casos de teste podem ocorrer em paralelo com com a implementação \cite{jorgensen2016software}.
 
-De acordo com \cite{pressman2005software} esta abordagem, é possível obter um conjunto de condições de entradas que exercerão plenamente todos os requisitos funcionais de um programa. As principais fontes de erros encontrados são funções incorretas ou ausentes, erros de interfaces, erros em estruturas de dados ou acesso externo ao banco de dados, erros de comportamento ou desempenho e erros de inicialização e finalização do sistema.
+De acordo com \cite{pressman2005software}, com  esta abordagem é possível obter um conjunto de condições de entradas que exercerão plenamente todos os requisitos funcionais de um programa. As principais fontes de erros encontrados são funções incorretas ou ausentes, erros de interfaces, erros em estruturas de dados ou acesso externo ao banco de dados, erros de comportamento ou desempenho e erros de inicialização e finalização do sistema.
 
 Alguns dos pontos negativos dos testes baseados em especificação são que podem ocorrer redundâncias entre os casos de testes agravada pela possibilidade de partes do software que não foram testadas. E como os teste são baseados no comportamento especificado, é difícil de imaginar esses métodos identificando comportamentos que não são especificados \cite{jorgensen2016software}.
 
 \subsection{Teste de caixa branca}
 
-O nome caixa branca vem da exigência do conhecimento de como o software é implementado, enxergar o seu funcionamento interno. Para executar esta técnica, por exemplo o diferentes casos de testes podem ser derivados para um laço de repetição de um código, sendo independente da funcionalidade do software \cite{graham2008foundations}. Usando métodos de caixa branca é possível derivar casos de testes que garantem que todos os caminhos lógicos tenho sido exercidos pelo menos uma vez, como os lados verdadeiros e falso de uma decisão lógica, os laços de repetições e outras estruturas para garantir a sua validade \cite{pressman2005software}. Com os conceitos de teoria de grafo é possível descrever exatamente o que será testado. Esta técnica serve também para a definição e uso de métricas de cobertura de teste, indicando até que ponto o software foi testado oferecendo assim um melhor gerenciamento de teste \cite{jorgensen2016software}.
+O nome caixa branca vem da exigência do conhecimento de como o software é implementado, enxergar o seu funcionamento interno. Para executar esta técnica, por exemplo, o diferentes casos de testes podem ser derivados para um laço de repetição de um código, sendo independente da funcionalidade do software \cite{graham2008foundations}. Usando métodos de caixa branca é possível derivar casos de testes que garantem que todos os caminhos lógicos tenham sido executados pelo menos uma vez, como os lados verdadeiros e falso de uma decisão lógica, os laços de repetições e outras estruturas para garantir a sua validade \cite{pressman2005software}. Com os conceitos de teoria de grafo é possível descrever exatamente o que será testado. Esta técnica serve também para a definição e uso de métricas de cobertura de teste, indicando até que ponto o software foi testado oferecendo assim um melhor gerenciamento de teste \cite{jorgensen2016software}.
 
-Entre os teste de caixa branca temos o teste de caminho ou \textit{path testing}, onde um programa é derivado(transformado em) em um grafo direcionado em que os nós são fragmentos de declaração e as ligações, chamadas de arestas, representam o fluxo de controle. Para derivar um programa procedural em grafo de fluxo podemos usar a notação da Figura \ref{fig:4estrutura_basica} para cada uma das construções básicas da programação estruturada \cite{jorgensen2016software}.
+Entre os testes de caixa branca temos o teste de caminho ou \textit{path testing}, onde um programa é derivado(transformado em) em um grafo direcionado em que os nós são fragmentos de declaração e as ligações, chamadas de arestas, representam o fluxo de controle. Para derivar um programa procedural em grafo de fluxo podemos usar a notação da Figura \ref{fig:4estrutura_basica} para cada uma das construções básicas da programação estruturada \cite{jorgensen2016software}.
 
 \begin{figure}[ht]
 \centering
@@ -374,7 +396,7 @@ A grande contribuição do \textit{V-Model} foi a orientação de que o teste pr
 
 \section{Teste de Software em SMA} \label{sec:testesma}
 
-Os agentes e sistemas multiagentes possuem muitas peculiaridades que tornam o processo de teste mais complexo e que devem abordar algumas questões que não eram preocupação no desenvolvimento de software orientado a objetos. Algumas dessas dificuldades foram citadas em \cite{rouff2002test,houhamdi2011multi,nguyen2009thesis} e são apresentadas a seguir, listando a propriedade do agente ou SMA e o que ela gera de dificuldade em relação aos testes:
+Os agentes e sistemas multiagentes possuem muitas peculiaridades que tornam o processo de teste mais complexo e que devem abordar algumas questões que não eram preocupação no desenvolvimento de software orientado a objetos. Algumas dessas dificuldades foram citadas em \cite{rouff2002test,houhamdi2011multi,nguyen2009thesis} e são apresentadas a seguir, listando as propriedades específicas de agente ou SMA e o que ela gera de dificuldade em relação aos testes:
 
 \begin{itemize}
 \item Distribuído/assíncrono: os agentes podem operar de forma simultânea e assíncrona, ou seja, um agente pode ter que aguardar que outros agentes cumpram seus objetivos que o contexto permita a execução de seus planos. Um agente pode funcionar corretamente isolado, mas incorretamente quando colocado em uma comunidade de agentes ou vice-versa.
@@ -483,6 +505,8 @@ onde:
     \end{equation}
   \end{itemize}
 \end{definition}
+
+\subsection{Redes de Petri Coloridas}
 
 \subsection{Redes de Petri e SMA}
 
