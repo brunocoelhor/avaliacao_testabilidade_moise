@@ -69,7 +69,7 @@ Após inserir as declarações padrões para as novas cores é possível criar a
 \item Definição das cores das transições: foi definida a variável c como etiqueta representante dos candidatos.
 \end{enumerate}
 
-O resultado pode ser visto na Figura \ref{fig:RPC-1}. Na Figura \ref{fig:4-rp-exemolo1} é apresentada a RPC com as fichas de candidato nos lugares iniciais. É possível observar que a transição está ativada pela marcação verde que há nela, sendo assim todos os requisitos para disparar estão contemplados. Na Figura \ref{fig:4-rp-exemolo2} a transição foi disparada, ela está desativada e o lugar $g4$, lugar final, recebeu uma ficha, que é o valor de saída da transição mostrado pela variável $c$ do arco. Este exemplo, apesar de ter duas fichas candidato ele simboliza que o mesmo agente candidato se comprometeu com as metas $g5$ e $g6$.
+O resultado pode ser visto na Figura \ref{fig:RPC-1}. Na Figura \ref{fig:4-rp-exemolo1} é apresentada a RPC com as fichas de candidato nos lugares iniciais. É possível observar que a transição está ativada pela marcação verde que há nela, sendo assim todos os requisitos para disparar estão contemplados. Na Figura \ref{fig:4-rp-exemolo2} a transição foi disparada, ela está desativada e o lugar $g4$, lugar final, recebeu uma ficha, que é o valor de saída da transição mostrado pela variável $c$ do arco. Este exemplo mostra que, apesar de ter duas fichas candidato nos lugares iniciais, e apenas uma no lugar final, simboliza que o mesmo agente candidato se comprometeu com as metas $g5$ e $g6$.
 
 \begin{figure}[ht]
   \centering
@@ -80,7 +80,7 @@ O resultado pode ser visto na Figura \ref{fig:RPC-1}. Na Figura \ref{fig:4-rp-ex
   \label{fig:RPC-1}
 \end{figure}
 
-Na Figura \ref{fig:RPC-2} a RPC representa as metas $g11$, $g12$ e $g10$ da ES. Este conjunto de metas tem diferentes missões. A meta $g11$ em Verde-azulado (cerceta) é da missão $m3$ e recebeu a ficha "secretario", a meta $g12$ em oliva recebeu a ficha "membro" e faz parte da missão $m4$ e por último a meta $g10$, em vermelho escuro, faz parte da missão $m5$, representa a conclusão das metas $g11$ e $g12$, e é de responsabilidade do presidente. A opção de manter as fichas "secretario" e "membro" na missão $g10$ foi para simbolizar que um agente pode delegar as metas para outros papéis realizarem, e o dono da meta ter apenas que garantir que ela seja concluída.
+Na Figura \ref{fig:RPC-2} a RPC representa as metas $g11$, $g12$ e $g10$ da ES. Este conjunto de metas tem diferentes missões. A meta $g11$ em Verde-azulado (cerceta) é da missão $m3$ e recebeu a ficha "secretario", a meta $g12$ em oliva recebeu a ficha "membro" e faz parte da missão $m4$ e por último a meta $g10$, em vermelho escuro, faz parte da missão $m5$, representa a conclusão das metas $g11$ e $g12$, e é de responsabilidade do presidente. A opção de manter as fichas "secretario" e "membro" na missão $g10$ foi para simbolizar que um agente pode delegar as metas para outros papéis realizarem, e o responsável pela meta ter apenas que garantir que ela seja concluída.
 
 \begin{figure}[ht]
   \centering
@@ -91,13 +91,31 @@ Na Figura \ref{fig:RPC-2} a RPC representa as metas $g11$, $g12$ e $g10$ da ES. 
   \label{fig:RPC-2}
 \end{figure}
 
-%Iniciando pela árvore de metas globais da Figura \ref{fig:es_exemplo}, e utilizando os operadores da Figura \ref{fig:moise_rp} a árvore é transformada em RP para cada missão, ainda de maneira isolada Figura \ref{fig:missoes_rp}. O processo começa lendo a árvore da esquerda para a direita da parte inferior, e transformando as metas em lugares da RP, utilizando os operadores relacionados, até que um conjuntos de meta para finalizar a missão seja concluída.
+Para completar a modelagem da RPC, deve-se incluir transições que serão ativadas quando uma meta falhar. Para metas em paralelo pode-se utilizar uma transição, para metas em sequência e escolha é necessário utilizar uma transição para cada lugar. Na Figura \ref{fig:4-rp-falha1} a simulação da RPC foi concluída pelo caminho esperado, já na Figura \ref{fig:4-rp-falha2} ocorreu uma falha. É possível observar que a inscrição do arco após a transição de falha possui uma função onde caso alguma das fichas entrar na transição a ficha resultante no lugar $g10$ será a de falha.
 
 \begin{figure}[ht]
   \centering
-  \subfigure[RPC com sucesso na execução ]{\includegraphics[width=0.49\textwidth]{imagens/4-rp-falha1.png}
-  \label{fig:4-rp-falha2}}
-  \subfigure[RPC com falha na execução]{\includegraphics[width=0.49\textwidth]{imagens/4-rp-falha2.png}\label{fig:4-rp-falha2}}
+  \subfigure[RPC com sucesso na execução ]{\includegraphics[width=0.49\textwidth]{imagens/4-RPCsucesso.png}
+  \label{fig:4-rp-falha1}}
+  \subfigure[RPC com falha na execução]{\includegraphics[width=0.49\textwidth]{imagens/4-RPCfalha.png}\label{fig:4-rp-falha2}}
   \caption{RPC com uma transição de falha}
   \label{fig:RPC-3}
 \end{figure}
+
+A última etapa do processo é a contagem dos caminhos da RPC modelada. O programa CPN Tools não possui uma ferramenta para esta avaliação, para obter este resultado é utilizado um algoritmo de contagem de caminhos para grafos dirigidos. Para executar o algoritmo na rede é preciso a conversão em um grafo dirigido . Esta ferramenta para a conversão e análise foi desenvolvida para este trabalho e é melhor descrita no Apêndice \ref{} APENDICE AKI. 
+
+Para utilizar a ferramenta é necessário carregar o arquivo salvo pela ferramenta CPN Tools de extensão .cpn na ferramenta. A saída da ferramenta é apresentado o grafo resultante da RPC, o total de caminhos que a RPC modelada apresenta e quais são eles como pode ser visto na Figura \ref{}.
+
+
+
+A Figura \ref{fig:4-fluxograma} representa o fluxograma das etapas do processo para a avaliação da testabilidade de um SMA utilizando $\mathcal{M}$oise$^{+}$ através da contagem de caminhos da RPC modelada do sistema.
+
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.9]{imagens/4-fluxograma.pdf}
+\caption{Etapas do processo.}
+\label{fig:4-fluxograma}
+\end{figure}
+
+No capítulo seguinte a metodologia é implementada em dois estudos de caso. 

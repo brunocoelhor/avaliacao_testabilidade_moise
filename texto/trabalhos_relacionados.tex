@@ -1,6 +1,6 @@
 \chapter{Trabalhos Relacionados}
 
-No trabalho \textit{Multi-agent system testing: A survey} \citet{houhamdi2011multi} faz uma investigação e descreve os trabalhos relacionados ao tema de teste em agentes. A separação em níveis de teste facilita a compreensão, também acontecem de alguns trabalhos citados ocuparem mais de um nível de teste. A Tabela \ref{tab:trabalhos_teste} mostra a relação de trabalhos apresentadas neste artigo e seus respectivos níveis. Mais detalhes sobre cada nível de teste pode ser visto na sessão \ref{sec:testesma}.
+No trabalho \textit{Multi-agent system testing: A survey} \citet{houhamdi2011multi} faz uma investigação e descreve os trabalhos relacionados ao tema de teste em agentes. A separação em níveis de teste facilita a compreensão, também acontece de alguns trabalhos citados ocuparem mais de um nível de teste. A Tabela \ref{tab:trabalhos_teste} mostra a relação de trabalhos apresentados neste artigo e seus respectivos níveis. Mais detalhes sobre cada nível de teste pode ser visto na sessão \ref{sec:testesma}.
 
 O autor conclui que os trabalhos em testes em SMA se concentram principalmente no nível de agente e integração e expõe áreas de investigações de teste que necessitam de atenção como: desenvolver um processo de teste completo para SMA, testes no nível de aceitação, testar propriedades emergentes no nível de sistema macroscópico, métricas para avaliar a qualidade dos testes em SMA e reduzir ou remover os efeitos colaterais na execução e monitoramento dos testes.
 
@@ -35,7 +35,7 @@ Tipo de Teste                        & Descrição                              
 \end{table}
 
 
-Em \cite{athamena2012petri} os autores propõem uma abordagem baseada em RP pra o teste de comportamento de SMA. Para isso modelos de análise e projeto criados com base na metodologia MaSE são convertidos em um modelo UML 2.0 padrão, e então os modelos UML são transformados em RP para testes formais.  A Figura \ref{fig:fluxograma} apresenta as atividades da abordagem.
+Em \cite{athamena2012petri} os autores propõem uma abordagem baseada em RP pra o teste de comportamento de SMA. Para isso modelos de análise e projeto criados com base na metodologia MaSE são convertidos em um modelo UML 2.0 padrão, e então os modelos UML são transformados em RP para testes formais. A Figura \ref{fig:fluxograma} apresenta as atividades da abordagem.
 
 \begin{figure}[ht]
 \centering
@@ -46,14 +46,14 @@ Em \cite{athamena2012petri} os autores propõem uma abordagem baseada em RP pra 
 
 Neste trabalho os autores desenvolveram um modelo para a transformação dos diagrama de classe de agente e diagrama de função do MaSE, para o diagrama de sequência do modelo UML 2.0, e então propuseram um modelo para transformar os diagramas de sequência em RP equivalentes e enfim podem ser aplicados as técnicas de testes automáticos no SMA.
 
-Segundo os autores as principais contribuições do trabalhos foi propor um processo de teste completo e abrangente para o SMA e reduzir os efeitos colaterais na execução e monitoramento do teste, não utilizando agentes testadores ou agentes oráculos o que pode influenciar no comportamento dos agentes ou desempenho do sistema.
+Segundo os autores as principais contribuições do trabalho foram propor um processo de teste completo e abrangente para o SMA e reduzir os efeitos colaterais na execução e monitoramento do teste, não utilizando agentes testadores ou agentes oráculos o que pode influenciar no comportamento dos agentes ou desempenho do sistema.
 
 
-Em \cite{winikoff2014testability} o objetivo é avaliar o quão difícil é testar um programa de agente na arquitetura BDI. Para isso o autor utiliza a técnica de testes de caixa-branca que é baseada no fluxo de controle, um critério básico e muito longo para avaliar a adequação de um conjunto de testes em que todos os caminhos (\textit{All-Path}) do programa sejam cobertos. Um motivo pela escolha de utilizar todos os caminhos é que os SMA geralmente envolvem ambientes não-episódicos, sendo que o comportamento de um determinado plano ou meta é geralmente sensível ao histórico do agente, precisando assim considerar as diferentes histórias possíveis.
+No estudo de \cite{winikoff2014testability} que avaliaram o quão difícil é testar um programa de agente na arquitetura BDI. Para isso o autor utiliza a técnica de testes de caixa-branca que é baseada no fluxo de controle, um critério básico e muito longo para avaliar a adequação de um conjunto de testes em que todos os caminhos (\textit{All-Path}) do programa sejam cobertos. O motivo da escolha de utilizar todos os caminhos é que os SMA geralmente envolvem ambientes não-episódicos, sendo que o comportamento de um determinado plano ou meta é geralmente sensível ao histórico do agente, precisando assim considerar as diferentes histórias possíveis.
 
-Neste trabalho para analisar o processo de execução BDI é utilizada uma visão declarativa. Os eventos e planos podem ser visualizados como uma árvore em que cada objetivo tem como filhos as instâncias do plano que são aplicáveis a ele, e cada instância do plano tem como filhos os sub-objetivos que ele publica. Esta forma de visualização facilita a análise do número de caminhos através de um programa BDI.
+Neste trabalho para analisar o processo de execução BDI é utilizada uma visão declarativa. Os eventos e planos podem ser visualizados como uma árvore, em que cada objetivo tem como filhos as instâncias do plano que são aplicáveis a ele, e cada instância do plano tem como filhos os sub-objetivos que ele publica. Esta forma de visualização facilita a análise do número de caminhos através de um programa BDI.
 
-Para a geração de árvore um programa em Prolog foi implementado, onde uma árvore de plano-meta é representada por termos Prolog com a gramática apresentada na Figura \ref{fig:prolog} onde árvore de plano-meta (Goal-Plan Tree) é representado por GPT, o AoGL abreviou lista de ação ou meta (Action or Goal List) e A é um símbolo. Por exemplo a Figura \ref{fig:arvore} mostra a árvore de plano-meta simplificada modelada pelo termo Prolog \begin{math} goal\left ( \left [ plan\left ( \left [ act\left ( a \right ) \right ] \right ),plan\left ( \left [ act\left ( b \right ) \right ] \right ) \right ] \right )\end{math}.
+Para a geração de árvore um programa em Prolog foi implementado, onde uma árvore de plano-meta é representada por termos Prolog com a gramática apresentada na Figura \ref{fig:prolog} onde árvore de plano-meta (\textit{Goal-Plan Tree}) é representado por GPT, o AoGL abreviou lista de ação ou meta (\textit{Action or Goal List}) e A é um símbolo. Por exemplo a Figura \ref{fig:arvore} mostra a árvore de plano-meta simplificada modelada pelo termo Prolog \begin{math} goal\left ( \left [ plan\left ( \left [ act\left ( a \right ) \right ] \right ),plan\left ( \left [ act\left ( b \right ) \right ] \right ) \right ] \right )\end{math}.
 
 %\begin{figure}
 %  \centering
@@ -78,12 +78,9 @@ Para a geração de árvore um programa em Prolog foi implementado, onde uma ár
 \label{fig:arvore}
 \end{figure}
 
+Com isso em vez de ver a execução de um programa BDI como um processo, o programa é visualizado como uma transformação de dados de uma árvore de planos-metas (finita) em uma sequência de execuções de ações. Assim, a questão de quão grande é o espaço de comportamento para os agentes BDI é respondida derivando fórmulas que permitem calcular o número de comportamentos, bem-sucedidos e mal sucedidos, ou seja, falhou para uma determinada planta de plano de meta.
 
-
-
-Com isso em vez de ver a execução de um programa BDI como um processo, o programa é visualizado como uma transformação de dados de uma árvore de planos-metas (finita) em uma sequencia de execuções de ações. Assim, a questão de quão grande é o espaço de comportamento para os agentes BDI é respondida derivando fórmulas que permitem calcular o número de comportamentos, bem-sucedidos e mal sucedidos (ou seja, falhou) para uma determinada planta de plano de meta.
-
-Após testes em modelos de execução BDI abstratos os autores verificaram se os dados obtidos se aplicavam também à modelos reais. A aplicação real escolhida foi o trabalho de \cite{burmeister2008bdi} que preenchia os requisitos para a comparação. Os valores obtidos são apresentados na Tabela \ref{tab:result_ontestability} onde $n^{\checkmark}(g)$ são os caminhos que os testes são bem sucedidos, $n^{\upchi}(g)$ são os caminhos onde os teste falham e $\ell$ são ações antes, depois e entre sub-metas em um plano.
+Após testes em modelos de execução BDI abstratos os autores verificaram se os dados obtidos se aplicavam também à modelos reais. A aplicação real escolhida foi o trabalho de \cite{burmeister2008bdi} que preenchia os requisitos para a comparação. Os valores obtidos são apresentados na Tabela \ref{tab:result_ontestability} onde $n^{\checkmark}(g)$ são os caminhos em que os testes são bem sucedidos, $n^{\upchi}(g)$ são os caminhos onde os teste falham e $\ell$ são ações antes, depois e entre sub-metas em um plano.
 
 \begin{table}[ht]
 \centering
@@ -99,10 +96,10 @@ $\ell = 1$                              & 294,912                 & 812,651     
 \end{tabular}
 \end{table}
 
-Neste artigo os autores concluíram que um teste completo em um sistema BDI não é viável. O tamanho de espaços de comportamento é muito grande e ainda se torna significativamente maior quando o sistema tem suporte à manipulação de falhas. Os autores também chegaram à conclusão de que o mecanismo de recuperação de falhas é eficaz para alcançar uma baixa taxa de falha real. E novas abordagens foram propostas para lidar com a testabilidade do sistema.
+\cite{winikoff2014testability} concluíram que um teste completo em um sistema BDI não é viável. O tamanho de espaços de comportamento é muito grande e ainda se torna significativamente maior quando o sistema tem suporte à manipulação de falhas. Os autores também chegaram à conclusão de que o mecanismo de recuperação de falhas é eficaz para alcançar uma baixa taxa de falha real. E novas abordagens foram propostas para lidar com a testabilidade do sistema.
 
 
-O trabalho \cite{winikoff2017bdi} retorna com o objetivo de avaliar se é possível obter garantias em um sistema multiagente através de testes, verificando a testabilidade de um programa, dando continuidade no trabalho anterior \cite{winikoff2014testability}, mas utilizando novas métricas. A testabilidade de um programa é um métrica que indica o esforço necessário para testar adequadamente um programa. Este trabalho tem por objetivo quantificar quantos testes são necessários para testar um um programa de agente BDI para satisfazer um critério considerando o critério de adequação do teste de todas as arestas, que é considerado como o mínimo geralmente aceito \cite{jorgensen2016software}. 
+O trabalho \cite{winikoff2017bdi} retorna com o objetivo de avaliar se é possível obter garantias em um sistema multiagente através de testes, verificando a testabilidade de um programa, dando continuidade ao trabalho publicado anteriormente \cite{winikoff2014testability}, mas utilizando novas métricas. A testabilidade de um programa é um métrica que indica o esforço necessário para testar adequadamente um programa. Este trabalho tem por objetivo quantificar quantos testes são necessários para testar um um programa de agente BDI para satisfazer um critério considerando o critério de adequação do teste de todas as arestas, que é considerado como o mínimo geralmente aceito \cite{jorgensen2016software}. 
 
 Uma das grandes contribuições dos autores é que a  análise é genérica permitindo a aplicação a todos os programas que utilizam a arquitetura BDI. Para esta análise equações são derivadas  para chegar a conclusão de quantos casos de teste (caminhos) são necessários para cobrir todas as arestas no gráfico de fluxo de controle correspondente a um determinado programa BDI.
 
@@ -117,7 +114,7 @@ A Figura \ref{fig:control_fluxo} apresenta um exemplo de um grafo de controle de
 
 Para derivar equações que calculem o menor número de caminhos exigidos de um programa começando em $S$ para chegar em $E$ é necessário descobrir quantos destes caminhos são bem-sucedidos (passando por $Y$) e quantos falharam (passando por $N$). Os autores definiram $p(P)$ como o número de caminhos necessários para cobrir todas as arestas do grafo de fluxo de controle correspondente ao programa $P$, $y(P)$ para os caminhos que vão por $Y$ e $n(P)$ para os caminhos que vão por $N$, então $p(P) = y(P) + n(P)$.
 
-Logo após os autores consideram $P_{1};P_{2}$, onde um subprograma $P_{1}$ é colocado em sequencia com $P_{2}$ Figura \ref{fig:grafop1p2}. O subprograma $P_{1}$ requer $p(P_{1})$ testes para cobrir todas as arestas com $n(P_{1})$ testes levando até a falha e $y(P_{1})$ levando à uma execução com sucesso.
+Logo após os autores consideram $P_{1};P_{2}$, onde um subprograma $P_{1}$ é colocado em sequência com $P_{2}$ (Figura \ref{fig:grafop1p2}). O subprograma $P_{1}$ requer $p(P_{1})$ testes para cobrir todas as arestas com $n(P_{1})$ testes levando até a falha e $y(P_{1})$ levando à uma execução com sucesso.
 
 \begin{figure}[ht]
 \centering
@@ -151,7 +148,7 @@ d = j = k = 3      & \multicolumn{1}{c}{n$^{\checkmark}$(g)} & \multicolumn{1}{c
     \end{threeparttable}
 \end{table}
 
-Este trabalho chegou à conclusão de que o número de teste necessário para \textit{Todas Arestas} é muito menor que para a abordagem de \textit{Todos Caminhos}, encontrando resultados onde é possível realizar os testes na prática. Outra conclusão é que permitir o tratamento de exceções não fez diferença significativa no número de testes como pode ser observado na Tabela \ref{tab:bdirevisited}.
+\cite{winikoff2017bdi} concluiu que o número de testes necessários para \textit{Todas Arestas} é muito menor que para a abordagem de \textit{Todos Caminhos}, encontrando resultados onde é possível realizar os testes na prática. Outra conclusão é que permitir o tratamento de exceções não fez diferença significativa no número de testes como pode ser observado na Tabela \ref{tab:bdirevisited}.
 
 Neste capítulo, trabalhos relacionados ao teste de software em SMA foram apresentados. As abordagens dos trabalhos na grande maioria tratam apenas do nível de agentes ou na testabilidade em nível de agentes. O nível de organização de agentes é uma evolução natural no desenvolvimento de SMA. Logo, estudos avaliando a testabilidade de agentes levando em conta esta dimensão se faz necessária.
 

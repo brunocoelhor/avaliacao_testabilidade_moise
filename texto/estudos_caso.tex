@@ -11,7 +11,7 @@ Este primeiro exemplo foi apresentado no trabalho \cite{kitio2008organisational}
 \begin{figure}[ht]
 \centering
 \includegraphics[scale=0.7]{imagens/5-writing-paper-estrutural.pdf}
-\caption{Especificação estrutural \textit{Writing paper}. \cite{hubner2011normative}}
+\caption{Esquema social \textit{Writing paper}. \cite{hubner2011normative}}
 \label{fig:writing-paper-estrutural}
 \end{figure}
     
@@ -42,8 +42,62 @@ escritor    & obrigação         & \textit{mBib}                          \\
 
 \subsection{Implementação}
 
-Seguindo a etapas da metodologia definimos a ordem de execução das metas.
-    
+Seguindo a etapas da metodologia, a ordem é:
+
+\subsubsection{Declarações}
+
+Baseado na especificação estrutural os papéis são editor e Escritor, com estas informações é possível codificar as \textit{Standard declaration} de acordo com o código abaixo.
+
+
+\begin{lstlisting}
+colset Role = with writer | editor | falha;
+colset ROLES = list Role;
+var w, e, f: ROLES;
+\end{lstlisting}
+
+\subsubsection{Estrutura}
+
+A árvore de decomposição de metas do esquema social da Figura \ref{fig:writing-paper-funcional} é a base para a estrutura da RPC. Utilizando a relação dos operadores a estrutura da RPC é modelada de acordo com a Figura \ref{fig:5-estrutura1}.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.7]{imagens/5-estruturaRPC1.png}
+\caption{Estrutura da RPC}
+\label{fig:5-estrutura1}
+\end{figure}
+
+\subsubsection{Inscrições}
+
+Através do esquema social e da especificação deôntica da Tabela \ref{tab:writing-paper-deontica} em que o papel editor é responsável pela missão \textit{mMan} e o papel escritor é responsável pelas missões \textit{mCol} e \textit{mBib} é possível determinar as inscrições da RPC. No nível folha em que um agente diferente começa uma missão deve conter uma ficha de inicialização neste lugar, para determinar que a transição seguinte tem como requisito a atuação do novo papel como pode ser visto na Figura \ref{fig:5inscricao1} no lugar \textit{wsec}.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.7]{imagens/5-inscricao1.png}
+\caption{RPC com as inscrições.}
+\label{fig:5inscricao1}
+\end{figure}
+
+\subsubsection{Falhas}
+
+A etapa seguinte, inclusão das transições de falha, pode ser visto na Figura \ref{fig:5rpcfinal1}. Quando a estrutura está em sequência ou escolha, deve-se incluir uma transição de falha para verificar se cada meta falhou, este processo é semelhante ao de \cite{winikoff2017bdi} onde na Figura \ref{fig:control_fluxo} ele verificava se cada ação tinha falhado.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.55]{imagens/5-rpc-final1.PNG}
+\caption{RPC com as transições de falha.}
+\label{fig:5rpcfinal1}
+\end{figure}
+
+\subsubsection{Caminhos}
+
+Para a avaliação de testabilidade do modelo, realizando a contagem de todos caminhos é necessário pegar o arquivo gerado pelo CPN Tools ao salvar a RPC e inseri-lo na ferramenta. A ferramenta gera o grafo e apresenta como saída a contagem de todos caminhos que é igual ao número de casos de testes para cobrir todas as possibilidades.
+
+%\begin{figure}[ht]
+%\centering
+%\includegraphics[scale=0.55]{imagens/5-caminhos1.png}
+%\caption{Contagem de todos os caminhos na ferramenta desenvolvida.}
+%\label{fig:5-caminhos1}
+%\end{figure}
     
 \section{\textit{Multi-Agent Programming Contest- Agents on Mars}}
 
@@ -79,3 +133,77 @@ n4      & explorerLeader    & obrigação         & \textit{m4}               \\
 \end{table}
   
 \subsection{Implementação}
+
+\subsubsection{Declaração}
+
+Neste exemplo como pode ser visto na Figura \ref{fig:marte-estrutural} possui mais papéis. Para esta modelagem será declarado apenas os papéis utilizados na especificação social, e também presentes na especificação deôntica. A declaração encontra-se no código abaixo.
+
+\begin{lstlisting}
+colset Role = with explorer | sentinelLeader | inspector | explorerLeader | falha;
+colset ROLES = list Role;
+colset Sequence = product Role*Role;
+var e, s, i, el, sl, seq: ROLES;
+\end{lstlisting}
+
+\subsubsection{Estrutura}
+
+A criação de estrutura tem início pelo modo que se lê o esquema social, e obedecendo a relação entre operadores e as estruturas da RP. As metas \textit{discover all saboteurs}, \textit{probe all} e \textit{define zones} estão em paralelo, logo elas são independentes para começar, mas a meta global \textit{domain mars} só poderá ser concluída quando todas as metas também estiverem concluídas. Logo a estrutura da RPC para este modelo foi definida na Figura \ref{5-rpc-estrutura2}. O posicionamento dos lugar importa apenas para a RP ficar mais legível, o que determina por onde ela começa são as fichas, inscrições inseridas na próxima etapa.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.55]{imagens/5-rpc-estrutura2.png}
+\caption{Estrutura da RPC \textit{Agents on Mars}.}
+\label{fig:5-rpc-estrutura2}
+\end{figure}
+
+\subsubsection{Inscrições}
+
+Na Figura \ref{fig:5-rpc-incricao} é possível ver as inscrições dos nomes dos lugares identificando as metas, as fichas identificando os papéis que atuam naquelas metas/lugares e também as inscrições nos arcos que determina que fichas são retiradas dos lugares iniciais e que fichas vão para o lugar final quando uma transição é disparada. As cores são apenas estilizações que podem ser utilizadas para identificar a que missão aquela meta/lugar está alocado.
+
+Apesar dos lugares \textit{discover all saboteurs}, \textit{probe all} estaram no final da RP, é possível identificar pelas fichas que eles já estão prontos para serem disparados desde o início, tendo como dependência apenas a conclusão da meta \textit{define zones}. A dependência é criada na inscrição do arco de saída, exigindo que as três fichas estejam disponível para a transição ser disparada.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.55]{imagens/5-rpc-incricao.png}
+\caption{RPC \textit{Agents on Mars} com as transições de falha.}
+\label{fig:5-rpc-incricao}
+\end{figure}
+
+\subsubsection{Falha}
+
+As transições de falha são inseridas obedecendo os operadores. Para uma melhor visualização elas são identificadas com a inscrição \textit{falha}. Elas recebem uma inscrição de arco que é uma função dependente da ficha recebida, caso a condição for verdadeira para a ficha o lugar final receberá uma ficha de falha, dependendo do modelo uma falha já poderá comprometer todo o sistema, caso não tenha nenhum laço de reparação. A Figura \ref{fig:5-rpc-final2} apresenta a RPC com as transições de falha.
+
+\begin{sidewaysfigure}[ht]
+\centering
+\includegraphics[scale=0.55]{imagens/5-rpc-final2.png}
+\caption{RPC \textit{Agents on Mars} com as transições de falha.}
+\label{fig:5-rpc-final2}
+\end{sidewaysfigure}
+
+\subsubsection{Caminhos}
+Esta etapa é independente da rede gerada, necessita apenas da inserção do arquivo gerado pela ferramenta CPN Tools ao salvar a rede na ferramenta desenvolvida para a contagem de caminhos. O grafo gerado e o número de caminhos é apresentado na Figura \ref{}
+
+
+
+
+\chapter{Conclusão}
+Avaliar o número de casos de testes para softwares tradicionais com uma cobertura em um nível adequado não é uma tarefa fácil, avaliar este número de casos de testes com uma boa cobertura é ainda mais complicado devido a natureza autônoma dos agentes, que podem realizar seus objetivos de forma independente.
+
+Esta dissertação propõem uma metodologia para a avaliação da testabilidade de SMA cuja organização é modelada através do $\mathcal{M}$oise$^{+}$. Esta metodologia permite modelar uma organização $\mathcal{M}$oise$^{+}$ para uma RPC através de cinco etapas com os processos: declarações, estrutura, inscrições, falha e caminhos. Para avaliar a testabilidade contando os caminhos apresentados na RPC foi desenvolvido uma ferramenta que utiliza algoritmo de contagem de caminhos em grafos.
+
+A principal contribuição deste trabalho é a metodologia que permite modelar em RPC sistemas multiagentes modelados pelo $\mathcal{M}$oise$^{+}$. Através das cinco etapas do processo e da  relação dos operadores da Figura \ref{fig:moise_rp} é possível modelar RPC que podem ser simuladas e avaliadas pelos recusrsos que as redes de petri oferecem. Uma contribuição secundária é uma ferramenta que realiza a contagem de caminhos de RP modeladas pela ferramenta CPN Tools, por padrão esta ferramenta não disponibiliza este tipo de análise.
+
+Para os exemplos apresentados e modelados pela metodologia foi possível avaliar a testabilidade e obter números de casos de testes necessários para a cobertura de todos os caminhos. Pela simplicidade dos exemplos o número de casos de teste é factível para realização dos testes, mas para exemplos mais complexos é possível que haja necessidade de escolha de áreas mais críticas do sistema para a criação de casos de uso focando por necessidade.
+
+Acredita-se que os objetivos deste trabalho foram alcançados. No entanto uma limitação apresentada pela pesquisa foi a modelagem das restrições de comunicação, característica do  $\mathcal{M}$oise$^{+}$ apresentada na especificação estrutural.
+
+\section{Trabalhos Futuros}
+
+Para um aperfeiçoamento e extensão da metodologia além da correção da limitação descrita anteriormente são apontadas  possibilidades de trabalhos futuros.
+
+\begin{itemize}
+\item Extensão para o nível de agentes: para uma análise mais completa se um SMA, é necessário avaliar o comportamento dos agentes. Este comportamento poderia ser realizado utilizando ainda o $\mathcal{M}$oise$^{+}$ como modelo de organização e a base da metodologia apresentada neste trabalho, mas utilizando em conjunto das RPC RP Hierárquicas. Cada meta teria um subnível hierárquico que teria uma rede de petri que faria a análise dos agentes e suas ações comprometidos com ela.
+
+\item Utilização da metologia em métodos de modelagem de sistemas orientados em agentes: Avaliar a utilização da metodologia em métodos como o Prometheus ou outros que já provê diretrizes para o desenvolvimento de SMA.
+\end{itemize}
+
