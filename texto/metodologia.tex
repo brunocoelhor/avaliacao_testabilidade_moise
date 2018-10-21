@@ -17,8 +17,6 @@ Como pode ser visto na Figura \ref{fig:cf_rp} a dinâmica da RP inicia pela indi
 
 Em \textbf{A1} há uma estrutura de divisão entre diferentes sequências, onde e a transição \textbf{t6} é disparada quando é possível realizar a ação, indo assim para um lugar \textbf{Y} que corresponde à execução bem sucedida do programa, e finalmente para \textbf{E} que é o encerramento do programa. A transição \textbf{t1} é acionada quando o agente não consegue executar a ação \textbf{a1}, direcionando assim para o \textbf{A2}, esta ação pode ser bem sucedida, indo para a transição \textbf{t7}, ou falhar e ir para a transição \textbf{t2}, operando semelhante ao apresentado no \textit{lugar} \textbf{A1}.
 
-%Como pode ser visto na Figura a dinâmica da RP inicia pela indicação da \textit{ficha} no lugar \textbf{S}, quando a transição \textbf{t0} é disparada a ficha é movida para o lugar \textbf{A1}. Neste lugar tem uma escolha entre diferentes sequências, onde e a transição \textbf{t6} é disparada quando é possível realizar a ação, indo assim para um lugar auxiliar \textbf{aux\_A1}, sendo assim possível disparar a transição \textbf{t10} que leva até ao lugar \textbf{Y} que corresponde à execução bem sucedida do programa, e finalmente para \textbf{E} que é o encerramento do programa. A transição \textbf{t1} é acionada quando o agente não consegue executar a ação, direcionando assim para o \textit{A2}, esta ação pode ser bem sucedida, indo para a transição \textbf{t7}, ou falhar e ir para a transição \textbf{t2}, operando semelhante ao apresentado no \textit{lugar} \textbf{A1}.
-
 \begin{figure}[ht]
     \centering
     \includegraphics[scale=0.4]{imagens/4-fluxo-rp2.png}
@@ -27,6 +25,8 @@ Em \textbf{A1} há uma estrutura de divisão entre diferentes sequências, onde 
 \end{figure}
 
 No método de \cite{winikoff2014testability,winikoff2017bdi} a avaliação de testabilidade é baseada na árvore de planos-metas, onde os objetivo tem como filhos os plano que são aplicáveis a ele, e cada instância do plano tem como filhos os sub-objetivos que ele publica, mas ainda apenas no nível de metas e ações. No contexto deste trabalho é necessário avaliar em múltiplos níveis que não estavam previsto em outros trabalhos, como missões, papéis e metas.
+
+
 
 Em \cite{winikoff2014testability} a árvore de planos-metas é o pilar para seu trabalho, neste a avaliação da testabilidade no $\mathcal{M}$oise$^{+}$ será baseada no esquema social da especificação social, que é uma árvore de decomposição de metas. Para realizar a conversão do esquema social para RP é necessário convencionar a relação dos operadores apresentados na legenda da Figura \ref{fig:es_exemplo} e sua RP equivalente.
 
@@ -51,7 +51,7 @@ Com a relação para a transformação dos operadores do esquema social para RP 
 
 Para atender ao nível organizacional é necessário utilizar recursos que não são disponíveis nas RP ordinárias, mas que podem ser modelados através de RP Coloridas. Na metodologia, as fichas coloridas são etiquetas empregadas na representação  dos papéis da organização. Os lugares se associam ao conjunto de cores das fichas, ou seja, sendo os lugares metas, então cada lugar terá a cor associada ao conjunto de papéis relacionados e de acordo com a especificação deôntica é possível correlacionar com a missão que representa aquele lugar.
 
-Os arcos que ligam os lugares as transições recebem agora uma variável de cor (\textit{colset}) com valor pertencente ao papel, descrevendo qual qual cor está saindo do lugar e qual cor estará indo para o lugar de saída. Para o exemplo da Figura \ref{fig:es_exemplo} dever-se ter um \textit{colset} que receberá os papéis, um \textit{colset} papéis, que será uma lista de papéis, e as variáveis que retratam as cores das transições, o código para declarar as cores na ferramenta CPN Tools encontra-se abaixo.
+Os arcos que ligam os lugares as transições recebem agora uma variável de cor (\textit{colset}) com valor pertencente ao papel, descrevendo qual cor está saindo do lugar e qual cor estará indo para o lugar de saída. Para o exemplo da Figura \ref{fig:es_exemplo} deve  ter um \textit{colset} que receberá os papéis, um \textit{colset} papéis, que será uma lista de papéis, e as variáveis que retratam as cores das transições. O código para declarar as cores na ferramenta CPN Tools encontra-se abaixo.
 
 \begin{lstlisting}
 colset Role = with candidato | secretario | membro | presidente;
@@ -65,8 +65,8 @@ Após inserir as declarações padrões para as novas cores é possível criar a
 
 \begin{enumerate}
 \item Definição da estrutura da RPC: como primeiro conjunto de metas tem-se $g5$, $g6$ e $g4$ ligadas pelo operador paralelismo, logo utilizamos a Figura \ref{fig:moise_rp} para escolher a estrutura da RP para este conjunto de metas.
-\item Definição das cores dos lugares: como todas as metas possuem a mesma missão, todos os lugares receberão a mesma cor, missão $m1$ é papel do candidato, logo os lugares receberão a ficha candidato.
-\item Definição das cores das transições: foi definida a variável c como etiqueta representante dos candidatos.
+\item Inscrições da RPC:  como todas as metas possuem a mesma missão, todos os lugares receberão o mesmo conjunto de cor (ROLES), e sendo a missão $m1$  papel do candidato, os lugares iniciais recebem a ficha candidato. E as transições recebem c como inscrição representante dos candidatos.
+
 \end{enumerate}
 
 O resultado pode ser visto na Figura \ref{fig:RPC-1}. Na Figura \ref{fig:4-rp-exemolo1} é apresentada a RPC com as fichas de candidato nos lugares iniciais. É possível observar que a transição está ativada pela marcação verde que há nela, sendo assim todos os requisitos para disparar estão contemplados. Na Figura \ref{fig:4-rp-exemolo2} a transição foi disparada, ela está desativada e o lugar $g4$, lugar final, recebeu uma ficha, que é o valor de saída da transição mostrado pela variável $c$ do arco. Este exemplo mostra que, apesar de ter duas fichas candidato nos lugares iniciais, e apenas uma no lugar final, simboliza que o mesmo agente candidato se comprometeu com as metas $g5$ e $g6$.
@@ -91,21 +91,31 @@ Na Figura \ref{fig:RPC-2} a RPC representa as metas $g11$, $g12$ e $g10$ da ES. 
   \label{fig:RPC-2}
 \end{figure}
 
-Para completar a modelagem da RPC, deve-se incluir transições que serão ativadas quando uma meta falhar. Para metas em paralelo pode-se utilizar uma transição, para metas em sequência e escolha é necessário utilizar uma transição para cada lugar. Na Figura \ref{fig:4-rp-falha1} a simulação da RPC foi concluída pelo caminho esperado, já na Figura \ref{fig:4-rp-falha2} ocorreu uma falha. É possível observar que a inscrição do arco após a transição de falha possui uma função onde caso alguma das fichas entrar na transição a ficha resultante no lugar $g10$ será a de falha.
+Para completar a modelagem da RPC, deve-se incluir transições que serão ativadas quando uma meta falhar. É necessário incluir uma transição e um lugar de falha para cada lugar até então do modelo, uma transição auxiliar é necessária para realizar a ligação com o lugar final. Na Figura \ref{fig:4-rp-falha1} a simulação da RPC foi concluída pelo caminho esperado, já na Figura \ref{fig:4-rp-falha2} ocorreu uma falha. É possível observar que a inscrição do arco após a transição de falha possui uma função onde caso alguma das fichas entrar na transição a ficha resultante no lugar $g10$ será a de falha.
 
 \begin{figure}[ht]
   \centering
-  \subfigure[RPC com sucesso na execução ]{\includegraphics[width=0.49\textwidth]{imagens/4-RPCsucesso.png}
+  \subfigure[RPC com sucesso na execução ]{\includegraphics[width=0.49\textwidth]{imagens/4-exemploRPCOK.png}
   \label{fig:4-rp-falha1}}
-  \subfigure[RPC com falha na execução]{\includegraphics[width=0.49\textwidth]{imagens/4-RPCfalha.png}\label{fig:4-rp-falha2}}
+  \subfigure[RPC com falha na execução]{\includegraphics[width=0.49\textwidth]{imagens/4-exemploRPCFalha.png}\label{fig:4-rp-falha2}}
   \caption{RPC com uma transição de falha}
   \label{fig:RPC-3}
 \end{figure}
 
-A última etapa do processo é a contagem dos caminhos da RPC modelada. O programa CPN Tools não possui uma ferramenta para esta avaliação, para obter este resultado é utilizado um algoritmo de contagem de caminhos para grafos dirigidos. Para executar o algoritmo na rede é preciso a conversão em um grafo dirigido . Esta ferramenta para a conversão e análise foi desenvolvida para este trabalho e é melhor descrita no Apêndice \ref{} APENDICE AKI. 
+A última etapa do processo é a contagem dos caminhos da RPC modelada. O programa CPN Tools não possui uma ferramenta para esta avaliação, para obter este resultado é utilizado um algoritmo de contagem de caminhos para grafos dirigidos. Para executar o algoritmo na rede é preciso a conversão em um grafo dirigido. 
 
-Para utilizar a ferramenta é necessário carregar o arquivo salvo pela ferramenta CPN Tools de extensão .cpn na ferramenta. A saída da ferramenta é apresentado o grafo resultante da RPC, o total de caminhos que a RPC modelada apresenta e quais são eles como pode ser visto na Figura \ref{}.
+Foi desenvolvida uma ferramenta Web\footnote[1]{disponível em https://github.com/brunocoelhor/PetriNet2Graph} para a conversão do arquivo do CPN Tool, a RPC, para um grafo dirigido. A ferramenta consiste no carregamento do arquivo com extensão $.cpn$, então este é convertido em um objeto \textit{JSON} para facilitar a obtenção das informações necessárias pelo Javascript.
 
+Através da leitura do arquivo \textit{JSON} são convertidos os lugares, transições e arcos da RPC para os nós e arcos do grafo. Com estes dados é possível gerar um grafo e apresentar em tela através do biblioteca Cytoscape.js\footnote[2]{disponível em http://js.cytoscape.org/}.
+
+Com as mesmas informações utilizadas para gerar o grafo em tela é gerado um \textit{array} nó-origem, nó destino que permite o algoritmo realizar a contagem dos caminhos. Logo o resultado da ferramenta é apresentado, as informações são: o número de lugares, transições, arcos e o total de caminhos e a estrutura do grafo gerado na transformação, o resultado pode ser visto na Figura \ref{fig:4-resultado}.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.3]{imagens/4-resultado.png}
+\caption{Resultados da RP.}
+\label{fig:4-resultado}
+\end{figure}
 
 
 A Figura \ref{fig:4-fluxograma} representa o fluxograma das etapas do processo para a avaliação da testabilidade de um SMA utilizando $\mathcal{M}$oise$^{+}$ através da contagem de caminhos da RPC modelada do sistema.

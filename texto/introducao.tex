@@ -8,6 +8,10 @@ Os agentes possuem propriedades como autonomia, reatividade, proatividade e habi
 
 Mesmo possuindo estruturas organizadas os SMA ainda possuem poucas garantias de que seu funcionamento é correto, sendo este um dos obstáculos para uma maior adoção desta abordagem na indústria \cite{houhamdi2011multi,winikoff2010assurance}. Um modo de obter essa garantia é através de Teste de Software. Os testes ajudam a medir a qualidade do software em termos de números de defeitos encontrados \cite{graham2008foundations}. No entanto, sabe-se que testar SMA não é uma tarefa trivial \cite{winikoff2010assurance}.
 
+Um planejamento para o teste de software é de grande importância, já que é impossível realizar um teste completo devido o limite de recursos como custo e tempo. Neste contexto o que se deve saber é qual a quantidade de testes se deve realizar para ter uma cobertura aceitável para garantir uma boa qualidade de software.
+
+Baseado nesta necessidade, este trabalho propõem uma metodologia para avaliar a testabilidade de SMA que utilizam o modelo $\mathcal{M}$oise$^{+}$. Com esta avaliação se obtém o número de casos de testes necessários para o cobertura do software através da abordagem de todos os caminhos (\textit{All path}).
+
 
 \section{Objetivos}
 
@@ -19,15 +23,10 @@ Os objetivos específicos a seguir servem como base para o desenvolvimento da pe
 
 \item Estudar metodologias e modelos para organização de SMA;
 \item Estudar abordagens de teste de software encontrados na engenharia de software tradicional;
-\item Desenvolver uma metodologia para avaliar a testabilidade em SMA no nível de organização;
-\item Validar Rede de Petri como a ferramenta a ser utilizada na modelagem de SMA com nível de organização;
+\item Validar Rede de Petri como ferramenta a ser utilizada na modelagem de SMA no nível de organização;
 \item Desenvolver uma ferramenta para o cálculo de caminhos de uma rede de petri.
 \item Avaliar a metodologia e a utilização da ferramenta nos testes em SMA no nível de organização.
 \item Avaliar a testabilidade de SMA que utilizam $\mathcal{M}$oise$^{+}$ como modelo organizacional.
-
-\item Avaliar 
-
-
 \end{itemize}
 
 
@@ -36,7 +35,7 @@ Os objetivos específicos a seguir servem como base para o desenvolvimento da pe
 O trabalho está organizado da seguinte forma:
 
 \begin{itemize}
-\item O capítulo 2 apresenta uma revisão bibliográfica relevante para o entendimento do trabalho com temas como: Teste de Software, sendo a primeira parte relativa aos testes na Engenharia de Software tradicional e a segunda parte uma visão dos testes em SMA. Inteligência artificial e sistemas multiagentes. Uma sessão dedicada à engenharia de software orientada a agentes e a última sessão apresenta conceitos de Redes de Petri.
+\item O capítulo 2 apresenta uma revisão bibliográfica relevante para o entendimento do trabalho com temas como: Inteligência artificial e sistemas multiagentes, teste de Software, sendo a primeira parte relativa aos testes na engenharia de software tradicional e a segunda parte uma visão dos testes em SMA, e a última seção apresenta conceitos de Redes de Petri.
 
 \item No capítulo 3 é feita uma revisão bibliográfica de trabalhos relacionados ao teste em SMA em diferentes níveis, metodologias e comparados com a proposta deste trabalho.
 

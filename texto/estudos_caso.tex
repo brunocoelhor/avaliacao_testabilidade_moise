@@ -79,25 +79,25 @@ Através do esquema social e da especificação deôntica da Tabela \ref{tab:wri
 
 \subsubsection{Falhas}
 
-A etapa seguinte, inclusão das transições de falha, pode ser visto na Figura \ref{fig:5rpcfinal1}. Quando a estrutura está em sequência ou escolha, deve-se incluir uma transição de falha para verificar se cada meta falhou, este processo é semelhante ao de \cite{winikoff2017bdi} onde na Figura \ref{fig:control_fluxo} ele verificava se cada ação tinha falhado.
+A etapa seguinte, inclusão das transições de falha, pode ser visto na Figura \ref{fig:5rpcfinal1}. Deve-se incluir uma transição, um lugar e uma transição auxiliar de falha para verificar se cada meta falhou, este processo é semelhante ao de \cite{winikoff2017bdi} onde na Figura \ref{fig:control_fluxo} ele verificava se cada ação tinha falhado.
 
-\begin{figure}[ht]
+\begin{sidewaysfigure}[ht]
 \centering
-\includegraphics[scale=0.55]{imagens/5-rpc-final1.PNG}
+\includegraphics[scale=0.65]{imagens/5-implementacao1.png}
 \caption{RPC com as transições de falha.}
 \label{fig:5rpcfinal1}
-\end{figure}
+\end{sidewaysfigure}
 
 \subsubsection{Caminhos}
 
-Para a avaliação de testabilidade do modelo, realizando a contagem de todos caminhos é necessário pegar o arquivo gerado pelo CPN Tools ao salvar a RPC e inseri-lo na ferramenta. A ferramenta gera o grafo e apresenta como saída a contagem de todos caminhos que é igual ao número de casos de testes para cobrir todas as possibilidades.
+Para a avaliação de testabilidade do modelo, realizando a contagem de todos caminhos é necessário obter o arquivo gerado pelo CPN Tools ao salvar a RPC e inseri-lo na ferramenta. A ferramenta gera o grafo e apresenta como saída a contagem de todos os lugares, transições, arcos e caminhos, este último, o total de caminhos, é igual ao número de casos de testes para cobrir todas as possibilidades do sistema (Figura \ref{fig:5-resultado1}).
 
-%\begin{figure}[ht]
-%\centering
-%\includegraphics[scale=0.55]{imagens/5-caminhos1.png}
-%\caption{Contagem de todos os caminhos na ferramenta desenvolvida.}
-%\label{fig:5-caminhos1}
-%\end{figure}
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.3]{imagens/5-resultado1.png}
+\caption{Resultados da RPC \textit{Writing paper}.}
+\label{fig:5-resultado1}
+\end{figure}
     
 \section{\textit{Multi-Agent Programming Contest- Agents on Mars}}
 
@@ -147,7 +147,7 @@ var e, s, i, el, sl, seq: ROLES;
 
 \subsubsection{Estrutura}
 
-A criação de estrutura tem início pelo modo que se lê o esquema social, e obedecendo a relação entre operadores e as estruturas da RP. As metas \textit{discover all saboteurs}, \textit{probe all} e \textit{define zones} estão em paralelo, logo elas são independentes para começar, mas a meta global \textit{domain mars} só poderá ser concluída quando todas as metas também estiverem concluídas. Logo a estrutura da RPC para este modelo foi definida na Figura \ref{5-rpc-estrutura2}. O posicionamento dos lugar importa apenas para a RP ficar mais legível, o que determina por onde ela começa são as fichas, inscrições inseridas na próxima etapa.
+A criação de estrutura tem início pelo modo de leitura do esquema social, e obedecendo a relação entre operadores e as estruturas da RP. As metas \textit{discover all saboteurs}, \textit{probe all} e \textit{define zones} estão em paralelo, logo elas são independentes para começar, mas a meta global \textit{domain mars} só poderá ser concluída quando todas as metas também estiverem concluídas. Logo a estrutura da RPC para este modelo foi definida na Figura \ref{fig:5-rpc-estrutura2}. O posicionamento dos lugar importa apenas para a RP ficar mais legível, o que determina por onde ela começa são as fichas, inscrições inseridas na próxima etapa.
 
 \begin{figure}[ht]
 \centering
@@ -164,24 +164,31 @@ Apesar dos lugares \textit{discover all saboteurs}, \textit{probe all} estaram n
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale=0.55]{imagens/5-rpc-incricao.png}
-\caption{RPC \textit{Agents on Mars} com as transições de falha.}
+\includegraphics[scale=0.5]{imagens/5-rpc-incricao.png}
+\caption{RPC \textit{Agents on Mars} com as inscrições.}
 \label{fig:5-rpc-incricao}
 \end{figure}
 
 \subsubsection{Falha}
 
-As transições de falha são inseridas obedecendo os operadores. Para uma melhor visualização elas são identificadas com a inscrição \textit{falha}. Elas recebem uma inscrição de arco que é uma função dependente da ficha recebida, caso a condição for verdadeira para a ficha o lugar final receberá uma ficha de falha, dependendo do modelo uma falha já poderá comprometer todo o sistema, caso não tenha nenhum laço de reparação. A Figura \ref{fig:5-rpc-final2} apresenta a RPC com as transições de falha.
+As transições de falha são inseridas obedecendo os operadores. Para uma melhor visualização elas são identificadas com a inscrição $ficha_{n}$. Elas recebem uma inscrição de arco que é uma função dependente da ficha recebida, caso a condição for verdadeira para a ficha o lugar final receberá uma ficha de falha, dependendo do modelo uma falha já poderá comprometer todo o sistema, caso não tenha nenhum laço de reparação. A Figura \ref{fig:5-rpc-final2} apresenta a RPC com as transições de falha.
 
 \begin{sidewaysfigure}[ht]
 \centering
-\includegraphics[scale=0.55]{imagens/5-rpc-final2.png}
+\includegraphics[scale=0.55]{imagens/5-implementacao2OK.png}
 \caption{RPC \textit{Agents on Mars} com as transições de falha.}
 \label{fig:5-rpc-final2}
 \end{sidewaysfigure}
 
 \subsubsection{Caminhos}
-Esta etapa é independente da rede gerada, necessita apenas da inserção do arquivo gerado pela ferramenta CPN Tools ao salvar a rede na ferramenta desenvolvida para a contagem de caminhos. O grafo gerado e o número de caminhos é apresentado na Figura \ref{}
+Esta etapa é independente da rede gerada, necessita apenas da inserção do arquivo gerado pela ferramenta CPN Tools ao salvar a rede na ferramenta desenvolvida para a contagem de caminhos. O grafo gerado e os resultados são apresentados na Figura \ref{fig:5-resultado2}.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.28]{imagens/5-resultado2.png}
+\caption{Resultados da RPC \textit{Agents on Mars}.}
+\label{fig:5-resultado2}
+\end{figure}
 
 
 
@@ -191,7 +198,7 @@ Avaliar o número de casos de testes para softwares tradicionais com uma cobertu
 
 Esta dissertação propõem uma metodologia para a avaliação da testabilidade de SMA cuja organização é modelada através do $\mathcal{M}$oise$^{+}$. Esta metodologia permite modelar uma organização $\mathcal{M}$oise$^{+}$ para uma RPC através de cinco etapas com os processos: declarações, estrutura, inscrições, falha e caminhos. Para avaliar a testabilidade contando os caminhos apresentados na RPC foi desenvolvido uma ferramenta que utiliza algoritmo de contagem de caminhos em grafos.
 
-A principal contribuição deste trabalho é a metodologia que permite modelar em RPC sistemas multiagentes modelados pelo $\mathcal{M}$oise$^{+}$. Através das cinco etapas do processo e da  relação dos operadores da Figura \ref{fig:moise_rp} é possível modelar RPC que podem ser simuladas e avaliadas pelos recusrsos que as redes de petri oferecem. Uma contribuição secundária é uma ferramenta que realiza a contagem de caminhos de RP modeladas pela ferramenta CPN Tools, por padrão esta ferramenta não disponibiliza este tipo de análise.
+A principal contribuição deste trabalho é a metodologia que permite modelar em RPC sistemas multiagentes modelados pelo $\mathcal{M}$oise$^{+}$. Através das cinco etapas do processo e da  relação dos operadores da Figura \ref{fig:moise_rp} é possível modelar RPC que podem ser simuladas e avaliadas pelos recursos que as redes de petri oferecem. Uma contribuição secundária é uma ferramenta que realiza a contagem de caminhos de RP modeladas pela ferramenta CPN Tools, por padrão esta ferramenta não disponibiliza este tipo de análise.
 
 Para os exemplos apresentados e modelados pela metodologia foi possível avaliar a testabilidade e obter números de casos de testes necessários para a cobertura de todos os caminhos. Pela simplicidade dos exemplos o número de casos de teste é factível para realização dos testes, mas para exemplos mais complexos é possível que haja necessidade de escolha de áreas mais críticas do sistema para a criação de casos de uso focando por necessidade.
 
