@@ -2,9 +2,9 @@
 
 \section{Inteligência Artificial e Sistemas Multiagentes}
 
-A Inteligência Artificial (IA), na sua origem, focou na criação de sistemas autônomos com a capacidade de resolver problemas com a ajuda mínima de outros sistemas. Esses sistemas muitas vezes não eram suficientes quando a resolução do problema não se adequava a sua especialização. A solução foi colocar o sistema em uma sociedade de sistemas com uma coleção diversificada de habilidades e capacidades, da mesma forma que as pessoas superam as limitações dos indivíduos quando trabalham juntas em uma organização \cite{durfee1991distributed}. 
+A Inteligência Artificial (IA), na sua origem, focou na criação de sistemas autônomos com a capacidade de resolver problemas com a ajuda mínima de outros sistemas. Esses sistemas, muitas vezes, não eram suficientes quando a resolução do problema não se adequava a sua especialização. A solução foi colocar o sistema em uma sociedade de sistemas com uma coleção diversificada de habilidades e capacidades, da mesma forma que as pessoas superam as limitações dos indivíduos quando trabalham juntas em uma organização \cite{durfee1991distributed}. 
 
-Assim surgiu a IAD uma subárea da IA que concentra esforços na pesquisa da compreensão das técnicas de conhecimento e raciocínio necessárias para a coordenação inteligente e sobre a incorporação e avaliação deste entendimento em sistemas de informação. Outros fatores também contribuíram e permitiram o desenvolvimento desta subárea, como o surgimento da computação distribuída e dos \textit{clusters} de computadores \cite{durfee1991distributed,bond2014readings}.
+Assim surgiu a IAD, uma subárea da IA, que concentra esforços na pesquisa da compreensão das técnicas de conhecimento e raciocínio necessárias para a coordenação inteligente e sobre a incorporação e avaliação deste entendimento em sistemas de informação. Outros fatores também contribuíram e permitiram o desenvolvimento desta subárea, como o surgimento da computação distribuída e dos \textit{clusters} de computadores \cite{durfee1991distributed,bond2014readings}.
 
 Segundo \cite{durfee1994distributed} da IAD surgiram duas novas subáreas:
 
@@ -21,7 +21,7 @@ Atualmente não existe uma definição comum de agentes para toda a comunidade d
 "Um agente é uma entidade real, ou virtual, imersa em um dado ambiente onde ela pode executar algumas ações, estar habilitada para perceber e representar parcialmente este ambiente, podendo ainda comunicar-se com os demais agentes do ambiente. Este agente apresenta um comportamento autônomo que é uma consequência de suas observações, do conhecimento armazenado e das interações com os demais agentes do ambiente."
 \end{quotation}
 
-Outras definições de agentes são apresentadas por \cite{wooldridge1995intelligent,franklin1996agent,russell2002artificial}, mas independente do tipo de agente e ambiente em que ele está inserido. Outro consenso na definição de agente é a propriedade de autonomia. A Figura \ref{fig:agente} representa um agente simples e sua interação com o ambiente.
+Outras definições de agentes são apresentadas por \cite{wooldridge1995intelligent,franklin1996agent,russell2002artificial}, mas independente do tipo de agente e ambiente em que ele está inserido. Outro consenso na definição de agente é a propriedade de autonomia, que consiste na capacidade do agente decidir quais decisões assumir para concluir uma meta. A Figura \ref{fig:agente} representa um agente simples e sua interação com o ambiente.
 
 \begin{figure}[ht]
 \centering
@@ -30,7 +30,7 @@ Outras definições de agentes são apresentadas por \cite{wooldridge1995intelli
 \label{fig:agente}
 \end{figure}
 
-Dois tipos de uso para “agente” são descritos por \citet{wooldridge1995intelligent}. Para o primeiro um conceito fraco de agentes e mais incontestável teriam as seguintes propriedades:
+Para \citet{wooldridge1995intelligent}, os agentes teriam as seguintes propriedades:
 
 \begin{itemize}
 \item Autonomia: os agentes operam sem intervenção direta de humanos ou outros agentes, e possuem algum mecanismo para controle de suas ações, o estado interno;
@@ -43,7 +43,7 @@ Outros pesquisadores quiseram dar um significado mais forte para agente, além d
 
 \begin{itemize}
 \item Mobilidade: habilidade de um agente de se mover de um local para outro na rede;
-\item Veracidade: um agente não envia conscientemente uma informação falsa;
+\item Veracidade: um agente não envia conscientemente uma informação falsa, ou seja, não são capazes de mentir ou omitir informações;
 \item Benevolência: os agentes não devem apresentar um comportamento contra-produtivo, e ele deve sempre executar o que foi solicitado;
 \item Racionalidade: um agente atuará para alcançar seus objetivos e não agirá de forma a evitar que seus objetivos sejam alcançados, pelo menos na medida em que suas crenças o permitam.
 \end{itemize}
@@ -60,7 +60,7 @@ Assim como não existe uma definição única para agentes também não existe u
 \item Cooperação: os agentes possuem habilidade social, e interagem com outros agentes.
 \end{itemize}
 
- Conforme \cite{nwana1996software} a classificação dos agentes foi criada  combinando as dimensões cooperação, autonomia e aprendizagem, derivando assim sete tipos de agentes: agentes colaborativos, agentes de interface, agentes colaborativos e com aprendizagem e agentes inteligentes sendo os principais, e os tipos  agentes móveis, agentes reativos e agentes híbridos como secundários, todos representados na Figura \ref{fig:class_agente}. As distinções não são definitivas e os agentes pode ainda ser agentes heterogêneos, que é quando os agentes combinam duas ou mais categorias.
+ Conforme \cite{nwana1996software} a classificação dos agentes foi criada  combinando as dimensões cooperação, autonomia e aprendizagem, derivando assim sete tipos de agentes: agentes colaborativos, agentes de interface, agentes colaborativos e com aprendizagem e agentes inteligentes sendo os principais, e os tipos  agentes móveis, agentes reativos e agentes híbridos como secundários, representados na Figura \ref{fig:class_agente}. As distinções não são definitivas e os agentes pode ainda ser agentes heterogêneos, que é quando os agentes combinam duas ou mais categorias.
 
 
 
@@ -71,12 +71,7 @@ Assim como não existe uma definição única para agentes também não existe u
 \label{fig:class_agente}
 \end{figure}
 
-%\subsection{Arquiteturas de Agentes}
-
-
-
-
-\subsection{Sistema Multiagente}
+\subsection{Sistema Multiagentes}
 
 De acordo com \cite{lesser1999cooperative} sistemas multiagentes são sistemas computacionais em que dois ou mais agentes interagem ou trabalham em conjunto para executar algum conjunto de tarefas ou para satisfazer um conjunto de metas. O comportamento destes agentes pode ser limitado através de políticas nos agentes ou através de uma organização, em um acordo de que agentes específicos exercem certas funções dentro desta sociedade.
 
@@ -87,7 +82,7 @@ Na Figura \ref{fig:sma_org} pode ser observado que os agentes estão formandos p
 \begin{figure}[ht]
 \centering
 \includegraphics[scale=0.4]{imagens/sma_org.png}
-\caption{Estrutura de um sistema multiagente \cite{jennings2000agent}.}
+\caption{Estrutura de um sistema multiagente, adaptado de \cite{jennings2000agent}.}
 \label{fig:sma_org}
 \end{figure}
 
@@ -99,13 +94,13 @@ Um agente tem um certo número de ações à disposição para cumprir sua meta,
   
 \begin{itemize}
 \item \textbf{Totalmente observável \textit{vs.} parcialmente observável.} \\
-Se os sensores do agente dão acesso ao estado completo do meio ambiente, detectando todos os aspectos relevantes para a escolha da ação então a tarefa do ambiente é totalmente observável. Nestes tipos de ambientes o agente não precisa manter nenhum estado interno para acompanhar o mundo. Um ambiente pode ser parcialmente observável devido aos sensores do agente serem ruidosos e imprecisos, ou porque partes do estado do ambiente estão faltando nos dados do sensor, não tendo assim informações completas do estado. Quanto mais observável é um ambiente, mais simples é criar agentes para operar nele.
+Se os sensores do agente dão acesso ao estado completo do meio ambiente, detectando todos os aspectos relevantes para a escolha da ação então a tarefa do ambiente é totalmente observável. Nestes tipos de ambientes, o agente não precisa manter nenhum estado interno para acompanhar o mundo. Um ambiente pode ser parcialmente observável devido aos sensores do agente serem ruidosos e imprecisos, ou porque partes do estado do ambiente estão faltando nos dados do sensor, não tendo assim informações completas do estado. Quanto mais observável é um ambiente, mais simples é criar agentes para operar nele.
 
 \item \textbf{Determinista \textit{vs.} Estocástico}\\
-O ambiente é determinista se o próximo estado do ambiente for completamente determinado pelo estado atual e pela ação executada pelo agente. Não gerando assim surpresas sobre o estado que resultará a realização de uma ação por um agente. Um ambiente estocástico está associado a uma probabilidade de conhecimento do próximo estado, baseado no estado atual e na ação realizada. Se um ambiente é determinista exceto pela ação dos outros agentes então o ambiente é estratégico.
+O ambiente é determinista se o próximo estado do ambiente for completamente determinado pelo estado atual e pela ação executada pelo agente. Não gerando assim surpresas sobre o estado que resultará a realização de uma ação por um agente. Um ambiente estocástico está associado a uma possibilidade de conhecimento do próximo estado, baseado no estado atual e na ação realizada. Se um ambiente é determinista exceto pela ação dos outros agentes então o ambiente é estratégico.
 
 \item \textbf{Episódico \textit{vs.} Sequencial} \\
-Em um ambiente episódico a escolha da ação em cada episódio depende apenas do próprio episódio, como por exemplo uma tarefa de classificação como detectar peças defeituosas em uma linha de montagem, essa ação não tem interferência de decisões anteriores, e não afetará decisões futuras. Em ambientes sequenciais a decisão atual pode afetar todas as decisões futuras, como por exemplo em um jogo de xadrez. Os ambiente episódicos são mais simples na questão de desenvolvimento.
+Em um ambiente episódico, a escolha da ação em cada episódio depende apenas do próprio episódio, como por exemplo uma tarefa de classificação como detectar peças defeituosas em uma linha de montagem, essa ação não tem interferência de decisões anteriores, e não afetará decisões futuras. Em ambientes sequenciais a decisão atual pode afetar todas as decisões futuras, como por exemplo em um jogo de xadrez. Os ambiente episódicos são mais simples na questão de desenvolvimento.
 
 \item \textbf{Estático \textit{vs.} dinâmico} \\
 Um ambiente estático permanece inalterado, exceto por algo que ocorra em consequência da ação do agente. Neste tipo de ambiente o agente não precisa continuar observando o mundo enquanto decide uma ação e não precisa se preocupar com a passagem do tempo. Em um ambiente dinâmico pode ocorrer mudanças enquanto o agente está deliberando, ou seja, outros processos estão operando nele.
@@ -114,7 +109,7 @@ Um ambiente estático permanece inalterado, exceto por algo que ocorra em conseq
 O ambiente discreto tem um número finito de estados distintos, como um jogo de xadrez, que possui um número finito de casas e jogadas possíveis. Já em um ambiente contínuo as ações ocorrem ao longo do tempo, como por exemplo uma corrida de táxi em que as ações e a localização se alteram de acordo com o tempo.
 
 \item \textbf{Agente único \textit{vs.} Multiagente}
-O ambiente onde um agente resolve um problema sozinho está em um ambiente de agente único, como é o caso de um  agente que retira as peças danificadas na linha de produção. Um agente tem por objetivo concluir sua meta de melhor maneira possível, em um ambiente multiagente podemos ter agentes atuando com comportamentos cooperativo ou competitivo de acordo com a situação desejada.
+O ambiente onde um agente resolve um problema sozinho está em um ambiente de agente único, como é o caso de um  agente que retira as peças danificadas na linha de produção. Um agente tem por objetivo concluir sua meta de melhor maneira possível. Em um ambiente multiagente podemos ter agentes atuando com comportamentos cooperativo ou competitivo de acordo com a situação desejada.
 \end{itemize}
 
 \subsection{Organização}\label{sec:orgsma}
@@ -123,9 +118,9 @@ Na nossa sociedade temos diversas organizações, e elas mostram um mecanismo ef
 
 Existem vários modelos de organização e eles estruturam o comportamento de entidades complexas em uma hierarquia de entidades encapsuladas onde cada membro tem funções a desempenhar. As funções ou papéis estruturam os departamentos, e estes estruturam uma organização. A teoria da organização analisa como estas organizações funcionam, suas principais características, as características mais relevantes dos membros, os papéis gerais que os membros adotam, os relacionamentos entre os membros, a hierarquia, as regras e normas que regem a organização \cite{argente2006multi}. A organização pode ajudar grupos de agentes simples a exibir comportamentos complexos e ajudar agentes sofisticados a reduzir a complexidade de seus raciocínios.
 
-No início, os sistemas tinham apenas uma visão centrada nos aspectos individuais dos agentes de modo que o SMA é projetado em termos de estados mentais dele, como as crenças, intenções e objetivos, conhecida como metodologia orientada a agentes. Desde então os SMA evoluíram para a metodologia orientada para a organização, levando em conta suas principais metas, estrutura e normas sociais\cite{argente2006multi}. 
+No início, os sistemas tinham apenas uma visão centrada nos aspectos individuais dos agentes de modo que o SMA é projetado em termos de estados mentais dele, como as crenças, intenções e objetivos, conhecida como metodologia orientada a agentes. Desde então os SMA evoluíram para a metodologia orientada para a organização, levando em conta suas principais metas, estrutura e normas sociais \cite{argente2006multi}. 
 
-Um conceito do tema de organização é a coordenação e \citet{malone1994interdisciplinary} a define como gestão de dependências entre atividades independentes. Esta definição para coordenação tem um sentido inclusivo para diferentes áreas de conhecimento, podendo ser aplicado em teoria organizacional, economia, ciência política, biologia, entre outros. Para a computação, as dependências entre diferentes processos computacionais se assemelham a interações entre pessoas, e devem ser estudados como podem ser gerenciadas.
+Um conceito do tema de organização é a coordenação e \citet{malone1994interdisciplinary} a definem como gestão de dependências entre atividades independentes. Esta definição para coordenação tem um sentido inclusivo para diferentes áreas de conhecimento, podendo ser aplicado em teoria organizacional, economia, ciência política, biologia, entre outros. Para a computação, as dependências entre diferentes processos computacionais se assemelham a interações entre pessoas, e devem ser estudados como podem ser gerenciadas.
 
 Os modelos de organização tornaram-se populares para coordenar entidades autônomas em sistemas abertos, descentralizados e dinâmicos. Estes modelos propõem uma regulação dos SMA por um conjunto de normas, planos, mecanismos e/ou estruturas formalmente especificadas para alcançar algum objetivo global desejado.
 
@@ -139,7 +134,7 @@ Alguns conceitos são recorrentes em diversos modelos que abordam a organizaçã
 
 \item \textbf{Papel:} (do inglês \textit{Role}) para \citet{odell2002role} “um papel é uma classe que define um repertório comportamental normativo de um agente.” Um papel deve ser centrado na organização e não no agente, promovendo uma separação de responsabilidades. Os papéis prescrevem um comportamento esperado do agente orientando como interagir na organização \cite{tinnemeier2009roles}.
 
-\item \textbf{Meta:} (do inglês \textit{Goal}) de acordo com \cite{hubner2003modelo} podemos separar em meta global que é o estado do mundo desejado pelo SMA e a meta local que é o objetivo de um único agente.
+\item \textbf{Meta:} (do inglês \textit{Goal}) de acordo com \cite{hubner2003modelo} podemos separar em meta global, que é o estado do mundo desejado pelo SMA e a meta local, que é o objetivo de um único agente.
 
 \item \textbf{Plano:} (do inglês \textit{Plan}) é o conjunto de ações para cumprir a meta desejada.
 \end{itemize}
@@ -167,7 +162,7 @@ A Especificação Organizacional (OS) no $\mathcal{M}$oise$^{+}$ é formada com 
 
 %acho que essa primeira frase está com algum problema, quando ela diz "uma relação entre preferência entre missões". Ou está mal escrita, ou eu não entendi.
 
-\item {\it Especificação Funcional (EF)}: é constituída por um conjunto de esquemas sociais e de uma relação entre preferência entre missões. Nos esquemas sociais a meta global é um conceito fundamental. No nível individual um esquema social é constituído por missões. A missão é o conjunto de metas globais que podem ser passadas a um agente através de um de seus papéis. No nível coletivo um esquema social é uma árvore de decomposição de metas globais, a raiz é meta do esquema social e a decomposição de metas é feita através de planos. A Figura \ref{fig:es_exemplo} representa o esquema social para o exemplo. A leitura do esquema social deve ser feita da esquerda para a direita e de baixo para cima. O operador \textit{sequência} significa que a meta $g2$ só pode ser realizada quando a meta $g1$ for satisfeita. O operador \textit{escolha} significa que a meta $g7$ será satisfeita se uma e somente uma das metas $g8$ ou $g9$ for satisfeita. O operador \textit{paralelismo}, significa que a meta $g4$ será satisfeita quando ambas as metas $g5$ e $g6$ forem alcançadas, mas as duas sub-metas podem ser buscadas em paralelo. 
+\item {\it Especificação Funcional (EF)}: é constituída por um conjunto de esquemas sociais e de uma relação entre preferência entre missões. Nos esquemas sociais a meta global é um conceito fundamental. No nível individual um esquema social é constituído por missões. A missão é o conjunto de metas globais que podem ser passadas a um agente através de um de seus papéis. No nível coletivo um esquema social é uma árvore de decomposição de metas globais, a raiz é meta do esquema social e a decomposição de metas é feita através de planos. A Figura \ref{fig:es_exemplo} representa o esquema social para o exemplo. A leitura do esquema social deve ser realizada da esquerda para a direita e de baixo para cima, começando pela meta $g5$ da Figura \ref{fig:es_exemplo}. O operador \textit{sequência} significa que a meta $g2$ só pode ser realizada quando a meta $g1$ for satisfeita. O operador \textit{escolha} significa que a meta $g7$ será satisfeita se uma e somente uma das metas $g8$ ou $g9$ for satisfeita. O operador \textit{paralelismo}, significa que a meta $g4$ será satisfeita quando ambas as metas $g5$ e $g6$ forem alcançadas, mas as duas sub-metas podem ser buscadas em paralelo. 
 \begin{figure}[ht]
 \centering
 \includegraphics[scale=0.4]{imagens/ES2.pdf}
@@ -252,7 +247,7 @@ Antes de prosseguir alguns termos precisam ter suas definições apresentadas pa
 \item Erro (do inglês \textit{error}) - As pessoas cometem erros. Este erros podem ser cometidos durante a codificação por exemplo. Outros sinônimos em português podem ser engano ou equívoco.
 \item Defeito (do inglês \textit{fault}) -  É o resultado de um erro. É mais preciso dizer que um defeito é a representação de um erro, onde a representação é o modo de expressão, sendo uma das formas de expressão um erro no código fonte, gerando uma anomalia (\textit{bug}) no funcionamento no sistema.
 \item Falha (do inglês \textit{failure}) - É o resultado da execução de um defeito no código. As falhas também podem ser causadas por condições ambientais ou condições de \textit{hardware}.
-\item Incidente - Ocorrência de evento que requer uma investigação. Um incidente é o sintoma associado a uma falha que alerta o usuário para a ocorrência de uma falha.
+\item Incidente - Ocorrência de evento que requer uma investigação. Um incidente é o sintoma associado a uma falha que alerta o usuário para a sua ocorrência.
 \item Caso de teste - um caso de teste possui um identificador e está associado ao comportamento de um programa. Ele também possui um conjunto de entradas e saídas esperadas.
 \end{itemize}
 
@@ -281,7 +276,7 @@ Alguns dos pontos negativos dos testes baseados em especificação são que pode
 
 \subsection{Teste de caixa branca}
 
-O nome caixa branca vem da exigência do conhecimento de como o software é implementado, enxergar o seu funcionamento interno. Para executar esta técnica, por exemplo, diferentes casos de testes podem ser derivados para um laço de repetição de um código, sendo independente da funcionalidade do software \cite{graham2008foundations}. Usando métodos de caixa branca é possível derivar casos de testes que garantem que todos os caminhos lógicos tenham sido executados pelo menos uma vez, como os lados verdadeiros e falso de uma decisão lógica, os laços de repetições e outras estruturas para garantir a sua validade \cite{pressman2005software}. Com os conceitos de teoria de grafo é possível descrever exatamente o que será testado. Esta técnica serve também para a definição e uso de métricas de cobertura de teste, indicando até que ponto o software foi testado oferecendo assim um melhor gerenciamento de teste \cite{jorgensen2016software}.
+O nome caixa branca vem da exigência do conhecimento de como o software é implementado. Para executar esta técnica, por exemplo, diferentes casos de testes podem ser derivados para um laço de repetição de um código, sendo independente da funcionalidade do software \cite{graham2008foundations}. Usando métodos de caixa branca é possível derivar casos de testes que garantem que todos os caminhos lógicos tenham sido executados pelo menos uma vez, como os lados verdadeiros e falso de uma decisão lógica, os laços de repetições e outras estruturas para garantir a sua validade \cite{pressman2005software}. Com os conceitos de teoria de grafo é possível descrever exatamente o que será testado. Esta técnica serve também para a definição e uso de métricas de cobertura de teste, indicando até que ponto o software foi testado oferecendo assim um melhor gerenciamento de teste \cite{jorgensen2016software}.
 
 Entre os testes de caixa branca temos o teste de caminho ou \textit{path testing}, onde um programa é derivado (transformado) em um grafo direcionado em que os nós são fragmentos de declaração e as ligações, chamadas de arestas, representam o fluxo de controle. Para derivar um programa procedural em grafo de fluxo podemos usar a notação da Figura \ref{fig:4estrutura_basica} para cada uma das construções básicas da programação estruturada \cite{jorgensen2016software}.
 
@@ -292,7 +287,7 @@ Entre os testes de caixa branca temos o teste de caminho ou \textit{path testing
 \label{fig:4estrutura_basica}
 \end{figure}
 
-\cite{jorgensen2016software} define que um conjunto de casos de teste para um programa constituem a cobertura de nó. Quando executados no programa, cada nó no grafo é percorrido e constituem cobertura de aresta se, quando executado no programa, cada aresta do nó grafo for percorrida. \cite{winikoff2014testability} em seu trabalho apresenta um exemplo representado na Figura \ref{fig:exemplo_grafo}, onde existem 2 caminhos pelo programa ( 1, 2, 3, 5, 6) e (1, 2, 4, 5, 6). Um conjunto de testes para ser adequado deve ter pelo menos 2 casos de testes, um para exercitar cada caminho possível do programa.
+\cite{jorgensen2016software} define que um conjunto de casos de teste para um programa constituem a cobertura de nó. Quando executados no programa, cada nó no grafo é percorrido e constituem cobertura de aresta se, quando executado no programa, cada aresta do nó grafo for percorrida. \cite{winikoff2014testability}, em seu trabalho, apresentam um exemplo representado na Figura \ref{fig:exemplo_grafo}, onde existem 2 caminhos pelo programa ( 1, 2, 3, 5, 6) e (1, 2, 4, 5, 6). Um conjunto de testes para ser adequado deve ter pelo menos 2 casos de testes, um para exercitar cada caminho possível do programa.
 
 \begin{figure}[ht]
 \centering
@@ -306,9 +301,9 @@ Entre os testes de caixa branca temos o teste de caminho ou \textit{path testing
 
 O projeto de testes para um software está diretamente relacionado ao modelo de ciclo escolhido para o desenvolvimento do sistema. Existem vários processos de desenvolvimento de software. Entre eles, modelo cascata, que possui as fases de análise e definição dos requisitos, projeto do sistema, implementação, integração e testes e por último entrega, operação e manutenção do sistema. Este modelo é bastante rígido e em princípio uma nova fase só começa quando a anterior termina \cite{sommerville2010}.
 
-Existem outros modelos como o modelo iterativos, e modelos baseados em metodologias ágeis. Estes modelos especificam as várias etapas do processo e a ordem em que são realizados. A escolha  depende dos objetivos e metas do sistema a serem desenvolvidos, mas sempre levando em conta que a qualidade e confiabilidade são os principais fatores \cite{graham2008foundations}.
+Existem outros modelos como o modelo iterativo, e modelos baseados em metodologias ágeis. Estes modelos especificam as várias etapas do processo e a ordem em que são realizados. A escolha  depende dos objetivos e metas do sistema a serem desenvolvidos, mas sempre levando em conta que a qualidade e confiabilidade são os principais fatores \cite{graham2008foundations}.
 
-Os níveis de teste de software do \textit{V-Model} espelham o modelo cascata do ciclo de vida de desenvolvimento de software. Apesar deste modelo apresentar desvantagens como ter um ciclo de \textit{feedback} muito longo entre a especificação de requisitos e o teste do software e não prever suporte ao desenvolvimento paralelo no nível de unidade, ele é útil para identificar níveis distintos e esclarecer objetivos e responsabilidades para cada nível de teste. Uma variação do modelo cascata é apresentada na Figura \ref{fig:v-model} apresentando os níveis de testes relacionados a cada etapa do desenvolvimento \cite{jorgensen2016software}. 
+Os níveis de teste de software do \textit{V-Model} espelham o modelo cascata do ciclo de vida de desenvolvimento de software. Apesar deste modelo apresentar desvantagens, como ter um ciclo de \textit{feedback} muito longo entre a especificação de requisitos e o teste do software e não prever suporte ao desenvolvimento paralelo no nível de unidade, ele é útil para identificar níveis distintos e esclarecer objetivos e responsabilidades para cada nível de teste. Uma variação do modelo cascata é apresentada na Figura \ref{fig:v-model} apresentando os níveis de testes relacionados a cada etapa do desenvolvimento \cite{jorgensen2016software}. 
 
 \begin{figure}[ht]
 \centering
@@ -317,27 +312,27 @@ Os níveis de teste de software do \textit{V-Model} espelham o modelo cascata do
 \label{fig:v-model}
 \end{figure}
 
-A grande contribuição do \textit{V-Model} foi a orientação de que o teste precisa começar o mais cedo possível no desenvolvimento do projeto. As atividades de testes devem ser realizadas em paralelo com as atividades de desenvolvimento, e toda a equipe deve trabalhar junta para que se possa identificar defeitos em decisões de projeto que de outra forma, separadamente, dificilmente seriam percebidas e comunicadas. A identificação precoce de defeitos é, de longe, o melhor meio de reduzir o seu custo final \cite{ammann2016introduction}.
+A grande contribuição do \textit{V-Model} foi a orientação de que o teste precisa começar o mais cedo possível no desenvolvimento do projeto. As atividades de testes devem ser realizadas em paralelo com as atividades de desenvolvimento, e toda a equipe deve trabalhar em conjunto para que se possa identificar defeitos em decisões de projeto que de outra forma, separadamente, dificilmente seriam percebidas e comunicadas. A identificação precoce de defeitos é, de longe, o melhor meio de reduzir o seu custo final \cite{ammann2016introduction}.
 
 \cite{graham2008foundations,ammann2016introduction} descrevem os níveis dos testes utilizados e seus objetivos:
 
 \begin{itemize}
 \item Teste de Aceitação: são projetados para determinar se o software atende aos requisitos e regras de negócio. Os testes são realizados com dados fornecidos pelo cliente do sistema e não com dados de teste simulados, e podem revelar erros e omissões na definição de requisitos do sistema, problemas de requisitos onde as instalações do sistema não atendem às necessidades do usuário ou desempenho do sistema inaceitável. Este nível de teste deve envolver o usuário ou alguém com conhecimento do domínio do sistema. 
-\item Teste de Sistema: se preocupa com o comportamento do sistema e se ele está em conformidade com os requisitos definidos no projeto. Nesta etapa assume-se que as blocos de software estão funcionando de acordo, pois encontrar uma falha de nível inferior pode ter um grande custo para uma correção. Os testes geralmente são realizados por uma equipe específica para esta tarefa e não pelos programadores.
-\item Teste de Integração: projetado para avaliar se a interação entre as interfaces dos módulos funciona corretamente. É uma técnica sistemática para a construção da arquitetura de software ao mesmo tempo que se investiga erros associados à interface. Uma das abordagens é construir o programa incrementalmente e cuidadosamente incluindo e testando os módulos de todos os componentes, assim erros são mais fáceis de isolar e corrigir. Geralmente é responsabilidade da equipe de desenvolvimento.
+\item Teste de Sistema: se preocupa com o comportamento do sistema e se ele está em conformidade com os requisitos definidos no projeto. Nesta etapa assume-se que os blocos de software estão funcionando de acordo, pois encontrar uma falha de nível inferior pode ter um grande custo para uma correção. Os testes geralmente são realizados por uma equipe específica para esta tarefa e não pelos programadores.
+\item Teste de Integração: projetado para avaliar se a interação entre as interfaces dos módulos funciona corretamente. É uma técnica sistemática para a construção da arquitetura de software, ao mesmo tempo que se investiga erros associados à interface. Uma das abordagens é construir o programa incrementalmente e cuidadosamente incluindo e testando os módulos de todos os componentes, assim erros são mais fáceis de isolar e corrigir. Geralmente é responsabilidade da equipe de desenvolvimento.
 \item Teste de Unidade: avalia as unidades produzidas na fase de implementação. É o nível de teste que verifica as menores unidades do software como por exemplo classes, objetos e funções. Os erros encontrados pelos testes são limitados ao escopo estabelecido para o teste unitário,  concentrando-se na lógica do processamento interno.  É comum os testes unitários serem empacotados juntamente com o código fonte e serem utilizados para testes automáticos em outros momentos.
 \end{itemize}
 
 
 \section{Teste de Software em SMA} \label{sec:testesma}
 
-Os agentes e sistemas multiagentes possuem muitas peculiaridades que tornam o processo de teste mais complexo e que devem abordar algumas questões que não eram preocupação no desenvolvimento de software orientado a objetos. Algumas dessas dificuldades foram citadas em \cite{rouff2002test,houhamdi2011multi,nguyen2009thesis} e são apresentadas a seguir, listando as propriedades específicas de agente ou SMA e o que ela gera de dificuldade em relação aos testes:
+Os agentes e sistemas multiagentes possuem muitas peculiaridades, que tornam o processo de teste mais complexo e que devem abordar algumas questões que não eram preocupação no desenvolvimento de software orientado a objetos. Algumas dessas dificuldades foram citadas em \cite{rouff2002test,houhamdi2011multi,nguyen2009thesis} e são apresentadas a seguir, listando as propriedades específicas de agente ou SMA e o que ela gera de dificuldade em relação aos testes:
 
 \begin{itemize}
 \item Distribuído/assíncrono: os agentes podem operar de forma simultânea e assíncrona, ou seja, um agente pode ter que aguardar que outros agentes cumpram seus objetivos, e que o contexto permita a execução de seus planos. Um agente pode funcionar corretamente isolado, mas incorretamente quando colocado em uma comunidade de agentes ou vice-versa.
 \item Autônomos: as mesmas entradas de testes podem resultar em comportamentos diferentes em diferentes execuções, uma vez que os agentes podem modificar sua base de conhecimento entre duas execuções ou podem aprender com entradas anteriores.
 \item Envio de mensagens: os agentes se comunicam através de envio de mensagens. As técnicas de teste tradicionais, envolvendo chamadas de método, não podem ser aplicadas diretamente.
-\item Fatores ambientais e normativos: o ambiente e convenções (normas, regras e leis) são fatores importantes que definem ou influenciam os comportamentos dos agentes. Alterações do contexto podem alterar os resultados do teste, e eventualmente, um contexto dá meios para que os agentes se comuniquem ou pode ser utilizado como uma entrada de teste.
+\item Fatores ambientais e normativos: o ambiente e convenções (normas, regras e leis) são fatores importantes que definem ou influenciam os comportamentos dos agentes. Alterações do contexto podem alterar os resultados do teste, e eventualmente, um contexto possui meios para que os agentes se comuniquem ou pode ser utilizado como uma entrada de teste.
 \item Agentes “selados”: os agentes podem fornecer primitivas observáveis ou não ao mundo exterior, resultando em acesso limitado ao estado e ao conhecimento dos agentes internos. Um exemplo poderia ser um SMA aberto que permite que agentes de terceiros acessem os recursos do SMA, semelhante ao funcionamento de APIs. Nestes casos, é difícil garantir que estes agentes de terceiros com o conhecimento limitado sobre suas intenções tenham um comportamento apropriado.
 \end{itemize}
 
@@ -368,11 +363,11 @@ Testar uma comunidade de agentes torna os objetivos de testes mais amplos, tendo
 
 Para uma melhor organização, assim como os testes no ciclo de vida de desenvolvimento de software tradicional, os testes nos SMA também possuem vários níveis. O teste de unidade possui o mesmo nome nas duas abordagens, já o segundo nível é o teste de agente e não possui um relacionado. O teste de  grupo se relaciona com o teste de integração, o teste de sociedade está relacionado com o teste de sistema. E por último e com o mesmo nome tem o teste de aceitação \cite{houhamdi2011multi}. 
 
-Os testes de unidade certificam-se que as menores unidades que compõem o agente estejam funcionando de acordo com o que foi planejado. Essas unidades incluem os blocos de código que implementam as metas, planos, base de conhecimento, mecanismos de raciocínio, especificações de regras entre outros. Já os testes de agentes testa a integração destas pequenas unidades  dentro do agente, verificando se os agentes são capazes de cumprir suas metas e se interagem corretamente com o ambiente. O teste de grupo avalia a interação entre agentes, protocolo de comunicação e semântica, integração com o ambiente, integração de agentes com recursos compartilhados, observa propriedades emergentes e comportamentos coletivos. Este teste certifica que um grupo de agentes e o ambiente funcionem corretamente juntos. O teste de sociedade avalia o SMA em execução no ambiente operacional de destino, testa as propriedades emergentes e macroscópicas esperadas do sistema. E o teste de aceitação testa o SMA no ambiente de execução do cliente e verifica se ele atende aos objetivos esperados das partes interessadas \cite{nguyen2009thesis}.
+Os testes de unidade certificam-se que as menores unidades que compõem o agente estejam funcionando de acordo com o que foi planejado. Essas unidades incluem os blocos de código que implementam as metas, planos, base de conhecimento, mecanismos de raciocínio, especificações de regras entre outros. Já os testes de agentes testam a integração destas pequenas unidades  dentro do agente, verificando se os agentes são capazes de cumprir suas metas e se interagem corretamente com o ambiente. O teste de grupo avalia a interação entre agentes, protocolo de comunicação e semântica, integração com o ambiente, integração de agentes com recursos compartilhados, observa propriedades emergentes e comportamentos coletivos. Este teste certifica que um grupo de agentes e o ambiente funcionem corretamente juntos. O teste de sociedade avalia o SMA em execução no ambiente operacional de destino, testa as propriedades emergentes e macroscópicas esperadas do sistema. E o teste de aceitação testa o SMA no ambiente de execução do cliente e verifica se ele atende aos objetivos esperados das partes interessadas \cite{nguyen2009thesis}.
 
 \section{Rede de Petri}
 
- Redes Petri (RP) é uma ferramenta gráfica e matemática para a descrição e análise de processos concorrentes, assíncronos e paralelos que surgem em sistemas distribuídos. Como ferramenta gráfica ela pode auxiliar na comunicação visual como um fluxograma e sendo uma ferramenta matemática, é possível estabelecer equações de estados, equações algébricas e outros modelos matemáticos que regem o comportamento dos sistemas \citep{murata1989petri}. 
+ Redes Petri (RP) é uma ferramenta gráfica e matemática para a descrição e análise de processos concorrentes, assíncronos e paralelos que surgem em sistemas distribuídos. Como ferramenta gráfica, ela pode auxiliar na comunicação visual como um fluxograma e sendo uma ferramenta matemática, é possível estabelecer equações de estados, equações algébricas e outros modelos matemáticos que regem o comportamento dos sistemas \citep{murata1989petri}. 
 
 Este modelo foi proposto por Carl Petri para modelar a comunicação entre autômatos, utilizados para representar sistemas a eventos discretos. Um sistema discreto é caracterizado pelas alterações de estados que ocorrem em instantes precisos. Os conceitos básicos para a modelagem de sistemas discretos são \cite{cardoso1997redes}:
 
@@ -438,9 +433,9 @@ Extensões para as RP ordinárias foram propostas para modelar sistemas complexo
 
 O benefício das RPC em relação as RP ordinárias é a possibilidade de utilização de marcas individualizadas (cores), que pode representar diferentes processos ou recursos de uma rede, permitindo a redução do tamanho de modelos \cite{maciel1996introduccao}. O uso dos conjuntos de cores nas RPC é semelhante aos tipos de dados das linguagens de programação (inteiro, real, caractere, lista) \cite{jensen2013coloured}.
 
-Nas RPC cada lugar está associado a um conjunto de cores das fichas que podem pertencer a este lugar, cada transição se associa um conjunto de cores que podem dispara-lá e os arcos não possuem apenas o peso (valor inteiro), é necessário descrever quais cores de fichas serão retiradas do local inicial e quais cores de fichas serão colocadas nos lugares de saída.
+Nas RPC, cada lugar está associado a um conjunto de cores das fichas que podem pertencer a este lugar, cada transição se associa um conjunto de cores que podem dispara-lá e os arcos não possuem apenas o peso (valor inteiro), é necessário descrever quais cores de fichas serão retiradas do local inicial e quais cores de fichas serão colocadas nos lugares de saída.
 
-Segundo \cite{maciel1996introduccao} as RPC são compostas por três partes distintas.
+Segundo \cite{maciel1996introduccao}, as RPC são compostas por três partes distintas.
 
 \begin{itemize}
 \item Estrutura: é um grafo dirigido composto por vértices do tipo lugar, representado graficamente por círculos ou elipses e por vértices do tipo transição representado retângulos.
@@ -452,7 +447,7 @@ Para a modelagem das RPC será utilizada a ferramenta CPN Tools.
 
 \subsection{CPN Tools}
 
-CPN Tools é uma ferramenta para editar, simular e analisar redes de Petri Coloridas hierárquicas e temporais, ela possui uma interface flexível, técnicas de interação detalhadas e retornos gráfico que informam ao usuário sobre o status das verificações, simulações e sintaxes \cite{ratzer2003cpn}. Na Figura \ref{fig:cpn} é apresentada a interface gráfica da ferramenta com um exemplo de RPC.
+CPN Tools é uma ferramenta para editar, simular e analisar RPC hierárquicas e temporais, ela possui uma interface flexível, técnicas de interação detalhadas e retornos gráfico que informam ao usuário sobre o status das verificações, simulações e sintaxes \cite{ratzer2003cpn}. Na Figura \ref{fig:cpn} é apresentada a interface gráfica da ferramenta com um exemplo de RPC.
 
 \begin{figure}[ht]
 \centering
@@ -477,40 +472,6 @@ var c, s, m, p: ROLES;
 
 Os arcos possuem a inscrição de expressão que determina as fichas que irão sair dos lugares iniciais e que irão para o lugar final, a expressão $s^^m$ significa que a transição só vai ser ativada quando chegar na transição uma variável $s$ e e outra $m$ e ao sair da transição elas se tornarão uma lista. A transição $T1$ possui apenas a inscrição de nome, a borda e canto inferior esquerdo verde é um retorno que o CPN Tools dá de que a transição está ativada, ou seja, tem todos os requisitos para ser disparada.
 
-Nativamente RP no CPN Tools não possui uma avaliação para contagem de caminhos, a solução para mensurar quantos caminhos tem uma RPC é avaliá-la como um grafo, construindo um grafo de marcações acessíveis. Os grafos possuem diversos algoritmos para contagem de caminhos, menor caminho, entre outros. 
+Nativamente RP no CPN Tools não possui uma avaliação para contagem de caminhos, a solução para mensurar quantos caminhos tem uma RPC é avaliá-la como um grafo, construindo um grafo de marcações acessíveis. Os grafos possuem diversos algoritmos para contagem de caminhos, menor caminho, entre outros, esta solução foi desenvolvida para este trabalho. 
 
-As RP são grafos direcionados onde $G = (V, E)$ consiste em um conjunto $V$ de nós e um conjunto $E$ de arcos tal que cada arco $e \in E$ é associado a um par de nós não ordenados. Os caminho em grafos tem a seguinte definição de: considere $v_{o}$ e $v_{n}$ nós de um grafo. Um caminho de $v_{o}$ a $v_{n}$ de comprimento $n$ é uma sequência alternada de $n$+1 nós e $n$ arcos começando em $v_{o}$ e terminando em $v_{n}$ \cite{cardoso1997redes}. As RP
-  
-
-\subsection{Redes de Petri e SMA}
-
-Diversos trabalhos utilizam RP no domínio de SMA. Em \cite{kohler2001modelling} RPC executáveis foram utilizadas para modelar a estrutura e o comportamento dos agentes. \citet{weyns2002colored} relataram como principais motivos da utilização de RPC como ferramenta de modelagem a visão conceitual clara sobre os agentes e o ambiente e o ótimo suporte a verificação e formalização. \cite{bai2004colored} apresentaram uma abordagem baseada em RPC para formar protocolos de interação flexíveis entre agentes. No trabalho \cite{de2004formal} é introduzido um modelo formal para verificar os planos em um SMA, baseadas na modelagem, simulação e verificação do modelo de RP Coloridas Hierárquicas (RPCH). \cite{poutakidis2009debugging} apresentam ferramentas para geração de casos de teste para de teste de unidade e outra para depuração e monitoramento de sistemas de agentes em execução. \citet{goncalves2010approach} expõe um modelo de RP desenvolvida para especificar o conhecimento em agentes e SMA, independentemente de estruturas e formalismos de representação do conhecimento. \cite{miller2011test} especifica, e mostra como medir, o grau de detalhes de um conjunto de casos de teste através de um agente de deputação que age como um oráculo, para avaliar a correção de um teste e utilizar a representação da RP do agente como suporte para medidas de cobertura de teste.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+As RP são grafos direcionados onde $G = (V, E)$ consiste em um conjunto $V$ de nós e um conjunto $E$ de arcos tal que cada arco $e \in E$ é associado a um par de nós não ordenados. Os caminho em grafos tem a seguinte definição de: considere $v_{o}$ e $v_{n}$ nós de um grafo. Um caminho de $v_{o}$ a $v_{n}$ de comprimento $n$ é uma sequência alternada de $n$+1 nós e $n$ arcos começando em $v_{o}$ e terminando em $v_{n}$ \cite{cardoso1997redes}.
